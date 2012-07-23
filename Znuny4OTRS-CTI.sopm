@@ -12,7 +12,7 @@
         <File Permission="644" Location="Kernel/Modules/AgentTicketPhoneCTI.pm"/>
         <File Permission="644" Location="Kernel/Config/Files/CTI.xml"/>
     </Filelist>
-    <IntroInstall Type="pre" Title="Installations-Information" Lang="en"><![CDATA[
+    <IntroInstall Type="pre" Title="Pre-Install Information" Lang="en"><![CDATA[
         <br/>
         <br/>
         Welcome to <u>Znuny4OTRS CTI</u>!
@@ -35,7 +35,7 @@
         <br/>
         <br/>
     ]]></IntroInstall>
-    <Install Type="post" Title="Installalations-Information" Lang="en"><![CDATA[
+    <Install Type="post" Title="Post-Install Information" Lang="en"><![CDATA[
         <p>
         Notice: To configure the Znuny4OTRS CTI go to
             <ol>
@@ -44,10 +44,10 @@
                 <li>Group "CTI"</li>
                 <li>Subgroup "MSN"</li>
             </ol>
-            (<a href="index.pl?Action=AdminSysConfig;Subaction=Edit;SysConfigSubGroup=XTI;SysConfigGroup=MSN">go here directly</a>)
+            (<a href="index.pl?Action=AdminSysConfig;Subaction=Edit;SysConfigSubGroup=CTI;SysConfigGroup=MSN">go here directly</a>)
         </p>
     ]]></IntroInstall>
-    <IntroInstall Type="pre" Title="Pre-Install Information" Lang="de"><![CDATA[
+    <IntroInstall Type="pre" Title="Pre-Installations-Information" Lang="de"><![CDATA[
         <br/>
         <br/>
         Herzlich Willkommen zu <u>Znuny4OTRS CTI</u>!
@@ -69,7 +69,7 @@
         <br/>
         <br/>
     ]]></IntroInstall>
-    <IntroInstall Type="post" Title="Post-Install Information" Lang="de"><![CDATA[
+    <IntroInstall Type="post" Title="Post-Installations-Information" Lang="de"><![CDATA[
         <p>
         Anmerkung: Um die Konfigurations-Optionen zu erreichen, gehe zu
             <ol>
@@ -78,7 +78,7 @@
                 <li>Gruppe "CTI"</li>
                 <li>Untergruppe "MSN"</li>
             </ol>
-            (<a href="index.pl?Action=AdminSysConfig;Subaction=Edit;SysConfigSubGroup=XTI;SysConfigGroup=MSN">go here directly</a>)
+            (<a href="index.pl?Action=AdminSysConfig;Subaction=Edit;SysConfigSubGroup=CTI;SysConfigGroup=MSN">direkt zur Konfiguration</a>)
         </p>
     ]]></IntroInstall>
 </otrs_package>
