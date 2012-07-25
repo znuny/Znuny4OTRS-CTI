@@ -11,6 +11,7 @@
     <Filelist>
         <File Permission="644" Location="Kernel/Modules/AgentTicketPhoneCTI.pm"/>
         <File Permission="644" Location="Kernel/Config/Files/CTI.xml"/>
+        <File Permission="644" Location="Kernel/Config/Files/ZCTI.pm"/>
     </Filelist>
     <IntroInstall Type="pre" Title="Installations-Information" Lang="en"><![CDATA[
         <br/>
@@ -27,6 +28,9 @@
         </p>
         <br/>
         <br/>
+        <p>Notice: Take care that your phone number is searchable via customer search (in case check Kernel/Config.pm -> CustomerUser -> CustomerUserSearchFields).</p>
+        <br/>
+        <br/>
         <p>
         Your Znuny Team!
         <br/>
@@ -35,7 +39,7 @@
         <br/>
         <br/>
     ]]></IntroInstall>
-    <Install Type="post" Title="Installalations-Information" Lang="en"><![CDATA[
+    <IntroInstall Type="post" Title="Installalations-Information" Lang="en"><![CDATA[
         <p>
         Notice: To configure the Znuny4OTRS CTI go to
             <ol>
@@ -44,7 +48,7 @@
                 <li>Group "CTI"</li>
                 <li>Subgroup "MSN"</li>
             </ol>
-            (<a href="index.pl?Action=AdminSysConfig;Subaction=Edit;SysConfigSubGroup=XTI;SysConfigGroup=MSN">go here directly</a>)
+            (<a href="index.pl?Action=AdminSysConfig;Subaction=Edit;SysConfigSubGroup=MSN;SysConfigGroup=CTI">go here directly</a>) - only needed in expert mode - otherwise just use the URL otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX)</a>
         </p>
     ]]></IntroInstall>
     <IntroInstall Type="pre" Title="Pre-Install Information" Lang="de"><![CDATA[
@@ -59,6 +63,9 @@
                 <li>Öffnen der Telefon-Maske bei eingehenden Anruf, Vorauswahl des Kunden über die CalleID in der URL (Beispiel URL: otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX).</li>
             </ul>
         </p>
+        <br/>
+        <br/>
+        <p>Anmerkung: Stellen Sie sicher, dass auch die Telefonnummer als suchbares Feld in der Kundensuche eingetragen ist (Überprüfen Sie Kernel/Config.pm -> CustomerUser -> CustomerUserSearchFields).</p>
         <br/>
         <br/>
         <p>
@@ -78,7 +85,7 @@
                 <li>Gruppe "CTI"</li>
                 <li>Untergruppe "MSN"</li>
             </ol>
-            (<a href="index.pl?Action=AdminSysConfig;Subaction=Edit;SysConfigSubGroup=XTI;SysConfigGroup=MSN">go here directly</a>)
+            (<a href="index.pl?Action=AdminSysConfig;Subaction=Edit;SysConfigSubGroup=MSN;SysConfigGroup=CTI">SysConfig Einstellungen für den Experten-Mode</a> - normal reicht die Benutzung über die URL otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX)</a>
         </p>
     ]]></IntroInstall>
 </otrs_package>
