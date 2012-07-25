@@ -13,7 +13,7 @@
         <File Permission="644" Location="Kernel/Config/Files/CTI.xml"/>
         <File Permission="644" Location="Kernel/Config/Files/ZCTI.pm"/>
     </Filelist>
-    <IntroInstall Type="pre" Title="Installations-Information" Lang="en"><![CDATA[
+    <IntroInstall Type="pre" Title="Pre-Install Information" Lang="en"><![CDATA[
         <br/>
         <br/>
         Welcome to <u>Znuny4OTRS CTI</u>!
@@ -39,7 +39,7 @@
         <br/>
         <br/>
     ]]></IntroInstall>
-    <IntroInstall Type="post" Title="Installalations-Information" Lang="en"><![CDATA[
+    <IntroInstall Type="post" Title="Post-Install Information" Lang="en"><![CDATA[
         <p>
         Notice: To configure the Znuny4OTRS CTI go to
             <ol>
@@ -51,7 +51,7 @@
             (<a href="index.pl?Action=AdminSysConfig;Subaction=Edit;SysConfigSubGroup=MSN;SysConfigGroup=CTI">go here directly</a>) - only needed in expert mode - otherwise just use the URL otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX)</a>
         </p>
     ]]></IntroInstall>
-    <IntroInstall Type="pre" Title="Pre-Install Information" Lang="de"><![CDATA[
+    <IntroInstall Type="pre" Title="Pre-Installations-Information" Lang="de"><![CDATA[
         <br/>
         <br/>
         Herzlich Willkommen zu <u>Znuny4OTRS CTI</u>!
@@ -76,7 +76,7 @@
         <br/>
         <br/>
     ]]></IntroInstall>
-    <IntroInstall Type="post" Title="Post-Install Information" Lang="de"><![CDATA[
+    <IntroInstall Type="post" Title="Post-Installations-Information" Lang="de"><![CDATA[
         <p>
         Anmerkung: Um die Konfigurations-Optionen zu erreichen, gehe zu
             <ol>

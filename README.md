@@ -25,7 +25,7 @@ For download see https://github.com/znuny/Znuny4OTRS-CTI/tree/master/build
 
 Commercial Support
 ==================
-For this extention and for OTRS in gerneral visit http://znuny.com. Looking forward to hear from you!
+For this extension and for OTRS in general visit http://znuny.com. Looking forward to hear from you!
 
 Enjoy!
 
