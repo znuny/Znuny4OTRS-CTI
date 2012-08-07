@@ -21,7 +21,7 @@ Prerequisites
 
 Download
 ========
-For download see https://github.com/znuny/Znuny4OTRS-CTI/downloads
+For download see https://github.com/znuny/Znuny4OTRS-CTI/downloads/
 
 Commercial Support
 ==================
