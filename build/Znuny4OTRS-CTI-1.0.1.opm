@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<otrs_package version="1.1">
+    <Name>Znuny4OTRS-CTI</Name>
+    <Version>1.0.1</Version>
+    <Vendor>Znuny GmbH</Vendor>
+    <URL>http://znuny.com/</URL>
+    <License>GNU AFFERO GENERAL PUBLIC LICENSE Version 3, November 2007</License>
+    <Description Lang="en">URL-CTI Support for incoming calls.</Description>
+    <Description Lang="de">URL-CTI Unterstützung für eingehende Anrufe.</Description>
+    <Framework>3.1.x</Framework>
+    <IntroInstall Lang="en" Title="Installations-Information" Type="pre">
+        &lt;br/&gt;
+        &lt;br/&gt;
+        Welcome to &lt;u&gt;Znuny4OTRS CTI&lt;/u&gt;!
+        &lt;br/&gt;
+        &lt;br/&gt;
+
+        &lt;p&gt;
+        You are about to install a CTI extention with the following features:
+            &lt;ul&gt;
+                &lt;li&gt;Open phone ticket screen with pre select customer based on CallerID in URL (Example: otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX).&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/p&gt;
+        &lt;br/&gt;
+        &lt;br/&gt;
+        &lt;p&gt;Notice: Take care that your phone number is searchable via customer search (in case check Kernel/Config.pm -&gt; CustomerUser -&gt; CustomerUserSearchFields).&lt;/p&gt;
+        &lt;br/&gt;
+        &lt;br/&gt;
+        &lt;p&gt;
+        Your Znuny Team!
+        &lt;br/&gt;
+        &lt;a href=&quot;http://znuny.com/&quot; target=&quot;_blank&quot;&gt;http://znuny.com&lt;/a&gt;
+        &lt;/p&gt;
+        &lt;br/&gt;
+        &lt;br/&gt;
+    </IntroInstall>
+    <IntroInstall Lang="en" Title="Installalations-Information" Type="post">
+        &lt;p&gt;
+        Notice: To configure the Znuny4OTRS CTI go to
+            &lt;ol&gt;
+                &lt;li&gt;Admin&lt;/li&gt;
+                &lt;li&gt;SysConfig&lt;/li&gt;
+                &lt;li&gt;Group &quot;CTI&quot;&lt;/li&gt;
+                &lt;li&gt;Subgroup &quot;MSN&quot;&lt;/li&gt;
+            &lt;/ol&gt;
+            (&lt;a href=&quot;index.pl?Action=AdminSysConfig;Subaction=Edit;SysConfigSubGroup=MSN;SysConfigGroup=CTI&quot;&gt;go here directly&lt;/a&gt;) - only needed in expert mode - otherwise just use the URL otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX)&lt;/a&gt;
+        &lt;/p&gt;
+    </IntroInstall>
+    <IntroInstall Lang="de" Title="Pre-Install Information" Type="pre">
+        &lt;br/&gt;
+        &lt;br/&gt;
+        Herzlich Willkommen zu &lt;u&gt;Znuny4OTRS CTI&lt;/u&gt;!
+        &lt;br/&gt;
+        &lt;br/&gt;
+        &lt;p&gt;
+        Sie sind gerade dabei, eine Agenten CTI Erweiterung mit folgenden Funktionen zu installieren:
+            &lt;ul&gt;
+                &lt;li&gt;Öffnen der Telefon-Maske bei eingehenden Anruf, Vorauswahl des Kunden über die CalleID in der URL (Beispiel URL: otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX).&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/p&gt;
+        &lt;br/&gt;
+        &lt;br/&gt;
+        &lt;p&gt;Anmerkung: Stellen Sie sicher, dass auch die Telefonnummer als suchbares Feld in der Kundensuche eingetragen ist (Überprüfen Sie Kernel/Config.pm -&gt; CustomerUser -&gt; CustomerUserSearchFields).&lt;/p&gt;
+        &lt;br/&gt;
+        &lt;br/&gt;
+        &lt;p&gt;
+        Ihr Znuny Team!
+        &lt;br/&gt;
+        &lt;a href=&quot;http://znuny.com/&quot; target=&quot;_blank&quot;&gt;http://znuny.com&lt;/a&gt;
+        &lt;/p&gt;
+        &lt;br/&gt;
+        &lt;br/&gt;
+    </IntroInstall>
+    <IntroInstall Lang="de" Title="Post-Install Information" Type="post">
+        &lt;p&gt;
+        Anmerkung: Um die Konfigurations-Optionen zu erreichen, gehe zu
+            &lt;ol&gt;
+                &lt;li&gt;Admin&lt;/li&gt;
+                &lt;li&gt;SysConfig&lt;/li&gt;
+                &lt;li&gt;Gruppe &quot;CTI&quot;&lt;/li&gt;
+                &lt;li&gt;Untergruppe &quot;MSN&quot;&lt;/li&gt;
+            &lt;/ol&gt;
+            (&lt;a href=&quot;index.pl?Action=AdminSysConfig;Subaction=Edit;SysConfigSubGroup=MSN;SysConfigGroup=CTI&quot;&gt;SysConfig Einstellungen für den Experten-Mode&lt;/a&gt; - normal reicht die Benutzung über die URL otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX)&lt;/a&gt;
+        &lt;/p&gt;
+    </IntroInstall>
+    <BuildDate>2012-07-25 17:03:39</BuildDate>
+    <BuildHost>build.znuny.com</BuildHost>
+    <Filelist>
+        <File Location="Kernel/Modules/AgentTicketPhoneCTI.pm" Permission="644" Encode="Base64">IyAtLQojIEtlcm5lbC9Nb2R1bGVzL0FnZW50VGlja2V0UGhvbmVDVEkucG0gLSBDVEkgc3VwcG9ydCBmb3IgcGhvbmUgdGlja2V0IAojIENvcHlyaWdodCAoQykgMjAxMiBabnVueSBHbWJILCBodHRwOi8vem51bnkuY29tLwojIC0tCiMgJElkOiAkCiMgLS0KIyBUaGlzIHNvZnR3YXJlIGNvbWVzIHdpdGggQUJTT0xVVEVMWSBOTyBXQVJSQU5UWS4gRm9yIGRldGFpbHMsIHNlZQojIHRoZSBlbmNsb3NlZCBmaWxlIENPUFlJTkcgZm9yIGxpY2Vuc2UgaW5mb3JtYXRpb24gKEFHUEwpLiBJZiB5b3UKIyBkaWQgbm90IHJlY2VpdmUgdGhpcyBmaWxlLCBzZWUgaHR0cDovL3d3dy5nbnUub3JnL2xpY2Vuc2VzL2FncGwudHh0LgojIC0tCgpwYWNrYWdlIEtlcm5lbDo6TW9kdWxlczo6QWdlbnRUaWNrZXRQaG9uZUNUSTsKCnVzZSBzdHJpY3Q7CnVzZSB3YXJuaW5nczsKdXNlIEtlcm5lbDo6U3lzdGVtOjpWYXJpYWJsZUNoZWNrIHF3KDphbGwpOwp1c2UgS2VybmVsOjpTeXN0ZW06OkN1c3RvbWVyVXNlcjsKCnVzZSB2YXJzIHF3KCRWRVJTSU9OKTsKJFZFUlNJT04gPSBxdygkUmV2aXNpb246IDEuMTcgJCkgWzFdOwoKc3ViIG5ldyB7CiAgICBteSAoICRUeXBlLCAlUGFyYW0gKSA9IEBfOwoKICAgICMgYWxsb2NhdGUgbmV3IGhhc2ggZm9yIG9iamVjdAogICAgbXkgJFNlbGYgPSB7JVBhcmFtfTsKICAgIGJsZXNzKCAkU2VsZiwgJFR5cGUgKTsKCiAgICAjIGNoZWNrIGFsbCBuZWVkZWQgb2JqZWN0cwogICAgZm9yIChxdyhQYXJhbU9iamVjdCBEQk9iamVjdCBRdWV1ZU9iamVjdCBMYXlvdXRPYmplY3QgQ29uZmlnT2JqZWN0IExvZ09iamVjdCkpIHsKICAgICAgICBpZiAoICEkU2VsZi0+eyRffSApIHsKICAgICAgICAgICAgJFNlbGYtPntMYXlvdXRPYmplY3R9LT5GYXRhbEVycm9yKCBNZXNzYWdlID0+ICJHb3Qgbm8gJF8hIiApOwogICAgICAgIH0KICAgIH0KCiAgICAkU2VsZi0+e0N1c3RvbWVyVXNlck9iamVjdH0gPSBLZXJuZWw6OlN5c3RlbTo6Q3VzdG9tZXJVc2VyLT5uZXcoJVBhcmFtKTsKCiAgICByZXR1cm4gJFNlbGY7Cn0KCnN1YiBSdW4gewogICAgbXkgKCAkU2VsZiwgJVBhcmFtICkgPSBAXzsKCiAgICAjIGdldCBjYWxsIHBhcmFtcwogICAgbXkgJENhbGxlcklEID0gJFNlbGYtPntQYXJhbU9iamVjdH0tPkdldFBhcmFtKCBQYXJhbSA9PiAnQ2FsbGVySUQnICk7CiAgICBteSAkTVNOICAgICAgPSAkU2VsZi0+e1BhcmFtT2JqZWN0fS0+R2V0UGFyYW0oIFBhcmFtID0+ICdNU04nICk7CgogICAgIyBnZXQgcm91dGUgZm9yIE1TTgogICAgbXkgJFNjcmVlbiA9ICdBY3Rpb249QWdlbnRUaWNrZXRQaG9uZSc7CiAgICBpZiAoJE1TTikgewogICAgICAgIG15ICRNU05NYXAgPSAkU2VsZi0+e0NvbmZpZ09iamVjdH0tPkdldCgnQ1RJOjpNU046OkFjdGlvbjo6TWFwJyk7CiAgICAgICAgaWYgKCRNU05NYXApIHsKICAgICAgICAgICAgbXkgJFNjcmVlbk1hcCA9ICcnOwogICAgICAgICAgICBmb3IgbXkgJEtleSAoc29ydCBrZXlzICV7JE1TTk1hcH0gKSB7CgogICAgICAgICAgICAgICAgIyBzZXQgZGVmYXVsdAogICAgICAgICAgICAgICAgaWYgKCAhJEtleSAmJiAhJFNjcmVlbk1hcCAmJiAkTVNOTWFwLT57JEtleX0gKSB7CiAgICAgICAgICAgICAgICAgICAgJFNjcmVlbk1hcCA9ICRNU05NYXAtPnskS2V5fTsKICAgICAgICAgICAgICAgIH0KCiAgICAgICAgICAgICAgICAjIHNldCBuZXcgcm91dGUKICAgICAgICAgICAgICAgIGlmICggJE1TTiA9fiAvJEtleS8gKSB7CiAgICAgICAgICAgICAgICAgICAgJFNjcmVlbk1hcCA9ICRNU05NYXAtPnskS2V5fTsKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgfQoKICAgICAgICAgICAgIyBzZXQgbmV3IHNjcmVlbgogICAgICAgICAgICBpZiAoJFNjcmVlbk1hcCkgewogICAgICAgICAgICAgICAgJFNjcmVlbiA9ICJBY3Rpb249JFNjcmVlbk1hcCI7CiAgICAgICAgICAgIH0KICAgICAgICB9CiAgICB9CgogICAgIyBpZiBubyBjYWxsZXIgaWQsIHJlZGlyZWN0IHRvIHNjcmVlbgogICAgaWYgKCAhJENhbGxlcklEICkgewogICAgICAgIHJldHVybiAkU2VsZi0+e0xheW91dE9iamVjdH0tPlJlZGlyZWN0KCBPUCA9PiAiJFNjcmVlbiIgKTsKICAgIH0KICAgIAogICAgIyBmaW5kIGN1c3RvbWVyCiAgICBteSAlQ3VzdG9tZXJVc2VyTGlzdCA9ICRTZWxmLT57Q3VzdG9tZXJVc2VyT2JqZWN0fS0+Q3VzdG9tZXJTZWFyY2goCiAgICAgICAgU2VhcmNoID0+ICRDYWxsZXJJRCwKICAgICk7CiAgICBpZiAoICElQ3VzdG9tZXJVc2VyTGlzdCApIHsKICAgICAgICByZXR1cm4gJFNlbGYtPntMYXlvdXRPYmplY3R9LT5SZWRpcmVjdCggT1AgPT4gIiRTY3JlZW4iICk7CiAgICB9CiAgICBteSAkVXNlcklEICAgPSAnJzsKICAgIG15ICRVc2VyTmFtZSA9ICcnOwogICAgZm9yIG15ICRLZXlDdXN0b21lclVzZXIgKCBrZXlzICVDdXN0b21lclVzZXJMaXN0ICkgewogICAgICAgICRVc2VySUQgICA9ICRLZXlDdXN0b21lclVzZXI7CiAgICAgICAgJFVzZXJOYW1lID0gJEN1c3RvbWVyVXNlckxpc3R7JEtleUN1c3RvbWVyVXNlcn07CiAgICB9CiAgICAkVXNlck5hbWUgPSAkU2VsZi0+e0xheW91dE9iamVjdH0tPkxpbmtFbmNvZGUoJFVzZXJOYW1lKTsKCiAgICAjIHJlZGlyZWN0IHRvIG5ldyBzY3JlZW4gd2l0aCBzZWxlY3RlZCBjdXN0b21lcgogICAgJFNjcmVlbiAuPSAiJlN1YmFjdGlvbj1TdG9yZU5ldyZFeHBhbmRDdXN0b21lck5hbWU9MSZDdXN0b21lclRpY2tldENvdW50ZXJGcm9tQ3VzdG9tZXI9MSZDdXN0b21lclNlbGVjdGVkPTEiOwogICAgJFNjcmVlbiAuPSAiJlNlbGVjdGVkQ3VzdG9tZXJVc2VyPSRVc2VySUQmQ3VzdG9tZXJLZXlfMT0kVXNlcklEJkN1c3RvbWVyVGlja2V0VGV4dF8xPSRVc2VyTmFtZSI7CiAgICAkU2NyZWVuIC49ICImU3ViamVjdD0mQ2hhbGxlbmdlVG9rZW49JFNlbGYtPntVc2VyQ2hhbGxlbmdlVG9rZW59IjsKCiAgICByZXR1cm4gJFNlbGYtPntMYXlvdXRPYmplY3R9LT5SZWRpcmVjdCggT1AgPT4gJFNjcmVlbiApOwp9CgoxOwo=</File>
+        <File Location="Kernel/Config/Files/CTI.xml" Permission="644" Encode="Base64">PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiID8+CjxvdHJzX2NvbmZpZyB2ZXJzaW9uPSIxLjAiIGluaXQ9IkFwcGxpY2F0aW9uIj4KICAgIDxDb25maWdJdGVtIE5hbWU9IkZyb250ZW5kOjpNb2R1bGUjIyNBZ2VudFRpY2tldFBob25lQ1RJIiBSZXF1aXJlZD0iMCIgVmFsaWQ9IjEiPgogICAgICAgIDxEZXNjcmlwdGlvbiBUcmFuc2xhdGFibGU9IjEiPkZyb250ZW5kIG1vZHVsZSByZWdpc3RyYXRpb24gZm9yIHRoZSBhZ2VudCBpbnRlcmZhY2UuIEUuIGcuIG90cnMvaW5kZXgucGw/QWN0aW9uPUFnZW50VGlja2V0UGhvbmVDVEk7Q2FsbGVySUQ9WFhYO01TTj1YWFg8L0Rlc2NyaXB0aW9uPgogICAgICAgIDxHcm91cD5DVEk8L0dyb3VwPgogICAgICAgIDxTdWJHcm91cD5Gcm9udGVuZDo6QWdlbnQ6Ok1vZHVsZVJlZ2lzdHJhdGlvbjwvU3ViR3JvdXA+CiAgICAgICAgPFNldHRpbmc+CiAgICAgICAgICAgIDxGcm9udGVuZE1vZHVsZVJlZz4KICAgICAgICAgICAgICAgIDxEZXNjcmlwdGlvbj5DVEk8L0Rlc2NyaXB0aW9uPgogICAgICAgICAgICAgICAgPFRpdGxlPjwvVGl0bGU+CiAgICAgICAgICAgICAgICA8TmF2QmFyTmFtZT48L05hdkJhck5hbWU+CiAgICAgICAgICAgIDwvRnJvbnRlbmRNb2R1bGVSZWc+CiAgICAgICAgPC9TZXR0aW5nPgogICAgPC9Db25maWdJdGVtPgogICAgPENvbmZpZ0l0ZW0gTmFtZT0iQ1RJOjpNU046OkFjdGlvbjo6TWFwIiBSZXF1aXJlZD0iMCIgVmFsaWQ9IjEiPgogICAgICAgIDxEZXNjcmlwdGlvbiBUcmFuc2xhdGFibGU9IjEiPihFeHBlcnQgU2V0dGluZyAtIG5vdCBuZWVkZWQgaW4gc3RhbmRhcmQgc2V0dXApIERlZmluZXMgdGhlIEFjdGlvbiBiYXNlZCBvbiBNU04sIGUuIGcuIHJvdXRlIGluY29taW5nIGNhbGxzIHRvIGRpZmZlcmVudCBmcm9udGVuZCBtb2R1bGVzIChLZXk9TnVtYmVyLFZhbHVlPUZyb250ZW5kLU1vZHVsZSBlLiBnLiBLZXk9MTIyMixWYWx1ZT1BZ2VudFRpY2tldFBob25lSG90bGluZSkuPC9EZXNjcmlwdGlvbj4KICAgICAgICA8R3JvdXA+Q1RJPC9Hcm91cD4KICAgICAgICA8U3ViR3JvdXA+TVNOPC9TdWJHcm91cD4KICAgICAgICAgICAgPFNldHRpbmc+CiAgICAgICAgICAgICAgICA8SGFzaD4KICAgICAgICAgICAgICAgICAgICA8SXRlbSBLZXk9IiI+QWdlbnRUaWNrZXRQaG9uZTwvSXRlbT4KICAgICAgICAgICAgICAgIDwvSGFzaD4KICAgICAgICAgICAgPC9TZXR0aW5nPgogICAgPC9Db25maWdJdGVtPgo8L290cnNfY29uZmlnPgo=</File>
+        <File Location="Kernel/Config/Files/ZCTI.pm" Permission="644" Encode="Base64">CgogICAgIyBjaGFuZ2VkIGNvbmZpZyB0byBhbHNvIHVzZSBwaG9uZSBudW1iZXIgYXMgc2VhY2ggZmllbGQKICAgICRTZWxmLT57Q3VzdG9tZXJVc2VyfSA9IHsKICAgICAgICBOYW1lICAgPT4gJ0RhdGFiYXNlIEJhY2tlbmQnLAogICAgICAgIE1vZHVsZSA9PiAnS2VybmVsOjpTeXN0ZW06OkN1c3RvbWVyVXNlcjo6REInLAogICAgICAgIFBhcmFtcyA9PiB7CiAgICAgICAgICAgICMgaWYgeW91IHdhbnQgdG8gdXNlIGFuIGV4dGVybmFsIGRhdGFiYXNlLCBhZGQgdGhlCiAgICAgICAgICAgICMgcmVxdWlyZWQgc2V0dGluZ3MKIyAgICAgICAgICAgIERTTiA9PiAnREJJOm9kYmM6eW91cmRzbicsCiMgICAgICAgICAgICBEU04gPT4gJ0RCSTpteXNxbDpkYXRhYmFzZT1jdXN0b21lcmRiO2hvc3Q9Y3VzdG9tZXJkYmhvc3QnLAojICAgICAgICAgICAgVXNlciA9PiAnJywKIyAgICAgICAgICAgIFBhc3N3b3JkID0+ICcnLAogICAgICAgICAgICBUYWJsZSA9PiAnY3VzdG9tZXJfdXNlcicsCiAgICAgICAgICAgICMgaWYgeW91ciBmcm9udGVuZCBpcyB1bmljb2RlIGFuZCB0aGUgY2hhcnNldCBvZiB5b3VyCiAgICAgICAgICAgICMgY3VzdG9tZXIgZGF0YWJhc2Ugc2VydmVyIGlzIGlzby04ODU5LTEsIHVzZSB0aGVzZSBvcHRpb25zLgojICAgICAgICAgICBTb3VyY2VDaGFyc2V0ID0+ICdpc28tODg1OS0xJywKIyAgICAgICAgICAgRGVzdENoYXJzZXQgPT4gJ3V0Zi04JywKCiAgICAgICAgICAgICMgQ2FzZVNlbnNpdGl2ZSB3aWxsIGNvbnRyb2wgaWYgdGhlIFNRTCBzdGF0ZW1lbnRzIG5lZWQgTE9XRVIoKQogICAgICAgICAgICAjICAgZnVuY3Rpb24gY2FsbHMgdG8gd29yayBjYXNlIGluc2Vuc2l0aXZlbHkuIFNldHRpbmcgdGhpcyB0bwogICAgICAgICAgICAjICAgMSB3aWxsIGltcHJvdmUgcGVyZm9ybWFuY2UgZHJhbWF0aWNhbGx5IG9uIGxhcmdlIGRhdGFiYXNlcy4KICAgICAgICAgICAgQ2FzZVNlbnNpdGl2ZSA9PiAwLAogICAgICAgIH0sCgogICAgICAgICMgY3VzdG9tZXIgdW5pcXVlIGlkCiAgICAgICAgQ3VzdG9tZXJLZXkgPT4gJ2xvZ2luJywKCiAgICAgICAgIyBjdXN0b21lciAjCiAgICAgICAgQ3VzdG9tZXJJRCAgICAgICAgICAgICA9PiAnY3VzdG9tZXJfaWQnLAogICAgICAgIEN1c3RvbWVyVmFsaWQgICAgICAgICAgPT4gJ3ZhbGlkX2lkJywKICAgICAgICBDdXN0b21lclVzZXJMaXN0RmllbGRzID0+IFsgJ2ZpcnN0X25hbWUnLCAnbGFzdF9uYW1lJywgJ2VtYWlsJyBdLAoKIyAgICAgICAgQ3VzdG9tZXJVc2VyTGlzdEZpZWxkcyA9PiBbJ2xvZ2luJywgJ2ZpcnN0X25hbWUnLCAnbGFzdF9uYW1lJywgJ2N1c3RvbWVyX2lkJywgJ2VtYWlsJ10sCiMgICAgICAgIEN1c3RvbWVyVXNlclNlYXJjaEZpZWxkcyAgICAgICAgICAgPT4gWyAnbG9naW4nLCAnZmlyc3RfbmFtZScsICdsYXN0X25hbWUnLCAnY3VzdG9tZXJfaWQnIF0sCiAgICAgICAgQ3VzdG9tZXJVc2VyU2VhcmNoRmllbGRzICAgICAgICAgICA9PiBbICdsb2dpbicsICdmaXJzdF9uYW1lJywgJ2xhc3RfbmFtZScsICdjdXN0b21lcl9pZCcsICdwaG9uZScgXSwKICAgICAgICBDdXN0b21lclVzZXJTZWFyY2hQcmVmaXggICAgICAgICAgID0+ICcqJywKICAgICAgICBDdXN0b21lclVzZXJTZWFyY2hTdWZmaXggICAgICAgICAgID0+ICcqJywKICAgICAgICBDdXN0b21lclVzZXJTZWFyY2hMaXN0TGltaXQgICAgICAgID0+IDI1MCwKICAgICAgICBDdXN0b21lclVzZXJQb3N0TWFzdGVyU2VhcmNoRmllbGRzID0+IFsnZW1haWwnXSwKICAgICAgICBDdXN0b21lclVzZXJOYW1lRmllbGRzICAgICA9PiBbICd0aXRsZScsICdmaXJzdF9uYW1lJywgJ2xhc3RfbmFtZScgXSwKICAgICAgICBDdXN0b21lclVzZXJFbWFpbFVuaXFDaGVjayA9PiAxLAojICAgICAgICAjIHNob3cgbm93IG93biB0aWNrZXRzIGluIGN1c3RvbWVyIHBhbmVsLCBDb21wYW55VGlja2V0cwojICAgICAgICBDdXN0b21lclVzZXJFeGNsdWRlUHJpbWFyeUN1c3RvbWVySUQgPT4gMCwKIyAgICAgICAgIyBnZW5lcmF0ZSBhdXRvIGxvZ2lucwojICAgICAgICBBdXRvTG9naW5DcmVhdGlvbiA9PiAwLAojICAgICAgICAjIGdlbmVyYXRlIGF1dG8gbG9naW4gcHJlZml4CiMgICAgICAgIEF1dG9Mb2dpbkNyZWF0aW9uUHJlZml4ID0+ICdhdXRvJywKIyAgICAgICAgIyBhZG1pbiBjYW4gY2hhbmdlIGN1c3RvbWVyIHByZWZlcmVuY2VzCiMgICAgICAgIEFkbWluU2V0UHJlZmVyZW5jZXMgPT4gMSwKIyAgICAgICAgIyB1c2UgY3VzdG9tZXIgY29tcGFueSBzdXBwb3J0IChyZWZlcmVuY2UgdG8gY29tcGFueSwgU2VlIEN1c3RvbWVyQ29tcGFueSBzZXR0aW5ncykKIyAgICAgICAgQ3VzdG9tZXJDb21wYW55U3VwcG9ydCA9PiAxLAojICAgICAgICAjIGNhY2hlIHRpbWUgdG8gbGl2ZSBpbiBzZWMuIC0gY2FjaGUgYW55IGRhdGFiYXNlIHF1ZXJpZXMKIyAgICAgICAgQ2FjaGVUVEwgPT4gMCwKIyAgICAgICAgIyBqdXN0IGEgcmVhZCBvbmx5IHNvdXJjZQojICAgICAgICBSZWFkT25seSA9PiAxLAogICAgICAgIE1hcCA9PiBbCgogICAgICAgICAgICAjIG5vdGU6IExvZ2luLCBFbWFpbCBhbmQgQ3VzdG9tZXJJRCBuZWVkZWQhCiAgICAgICAgICAgICMgdmFyLCBmcm9udGVuZCwgc3RvcmFnZSwgc2hvd24gKDE9YWx3YXlzLDI9bGl0ZSksIHJlcXVpcmVkLCBzdG9yYWdlLXR5cGUsIGh0dHAtbGluaywgcmVhZG9ubHksIGh0dHAtbGluay10YXJnZXQKICAgICAgICAgICAgWyAnVXNlclRpdGxlJywgICAgICAnVGl0bGUnLCAgICAgICd0aXRsZScsICAgICAgMSwgMCwgJ3ZhcicsICcnLCAwIF0sCiAgICAgICAgICAgIFsgJ1VzZXJGaXJzdG5hbWUnLCAgJ0ZpcnN0bmFtZScsICAnZmlyc3RfbmFtZScsIDEsIDEsICd2YXInLCAnJywgMCBdLAogICAgICAgICAgICBbICdVc2VyTGFzdG5hbWUnLCAgICdMYXN0bmFtZScsICAgJ2xhc3RfbmFtZScsICAxLCAxLCAndmFyJywgJycsIDAgXSwKICAgICAgICAgICAgWyAnVXNlckxvZ2luJywgICAgICAnVXNlcm5hbWUnLCAgICdsb2dpbicsICAgICAgMSwgMSwgJ3ZhcicsICcnLCAwIF0sCiAgICAgICAgICAgIFsgJ1VzZXJQYXNzd29yZCcsICAgJ1Bhc3N3b3JkJywgICAncHcnLCAgICAgICAgIDAsIDAsICd2YXInLCAnJywgMCBdLAogICAgICAgICAgICBbICdVc2VyRW1haWwnLCAgICAgICdFbWFpbCcsICAgICAgJ2VtYWlsJywgICAgICAxLCAxLCAndmFyJywgJycsIDAgXSwKCiMgICAgICAgICAgICBbICdVc2VyRW1haWwnLCAgICAgICdFbWFpbCcsICdlbWFpbCcsICAgICAgICAgICAxLCAxLCAndmFyJywgJyRFbnZ7IkNHSUhhbmRsZSJ9P0FjdGlvbj1BZ2VudFRpY2tldENvbXBvc2UmUmVzcG9uc2VJRD0xJlRpY2tldElEPSREYXRheyJUaWNrZXRJRCJ9JkFydGljbGVJRD0kRGF0YXsiQXJ0aWNsZUlEIn0nLCAwIF0sCiAgICAgICAgICAgIFsgJ1VzZXJDdXN0b21lcklEJywgJ0N1c3RvbWVySUQnLCAnY3VzdG9tZXJfaWQnLCAwLCAxLCAndmFyJywgJycsIDAgXSwKCiMgICAgICAgICAgICBbICdVc2VyQ3VzdG9tZXJJRHMnLCAnQ3VzdG9tZXJJRHMnLCAnY3VzdG9tZXJfaWRzJywgMSwgMCwgJ3ZhcicsICcnLCAwIF0sCiAgICAgICAgICAgIFsgJ1VzZXJQaG9uZScsICAgICAgICAnUGhvbmUnLCAgICAgICAncGhvbmUnLCAgICAgICAgMSwgMCwgJ3ZhcicsICcnLCAwIF0sCiAgICAgICAgICAgIFsgJ1VzZXJGYXgnLCAgICAgICAgICAnRmF4JywgICAgICAgICAnZmF4JywgICAgICAgICAgMSwgMCwgJ3ZhcicsICcnLCAwIF0sCiAgICAgICAgICAgIFsgJ1VzZXJNb2JpbGUnLCAgICAgICAnTW9iaWxlJywgICAgICAnbW9iaWxlJywgICAgICAgMSwgMCwgJ3ZhcicsICcnLCAwIF0sCiAgICAgICAgICAgIFsgJ1VzZXJTdHJlZXQnLCAgICAgICAnU3RyZWV0JywgICAgICAnc3RyZWV0JywgICAgICAgMSwgMCwgJ3ZhcicsICcnLCAwIF0sCiAgICAgICAgICAgIFsgJ1VzZXJaaXAnLCAgICAgICAgICAnWmlwJywgICAgICAgICAnemlwJywgICAgICAgICAgMSwgMCwgJ3ZhcicsICcnLCAwIF0sCiAgICAgICAgICAgIFsgJ1VzZXJDaXR5JywgICAgICAgICAnQ2l0eScsICAgICAgICAnY2l0eScsICAgICAgICAgMSwgMCwgJ3ZhcicsICcnLCAwIF0sCiAgICAgICAgICAgIFsgJ1VzZXJDb3VudHJ5JywgICAgICAnQ291bnRyeScsICAgICAnY291bnRyeScsICAgICAgMSwgMCwgJ3ZhcicsICcnLCAwIF0sCiAgICAgICAgICAgIFsgJ1VzZXJDb21tZW50JywgICAgICAnQ29tbWVudCcsICAgICAnY29tbWVudHMnLCAgICAgMSwgMCwgJ3ZhcicsICcnLCAwIF0sCiAgICAgICAgICAgIFsgJ1ZhbGlkSUQnLCAgICAgICAgICAnVmFsaWQnLCAgICAgICAndmFsaWRfaWQnLCAgICAgMCwgMSwgJ2ludCcsICcnLCAwIF0sCiAgICAgICAgXSwKICAgICAgICAjIGRlZmF1bHQgc2VsZWN0aW9ucwogICAgICAgIFNlbGVjdGlvbnMgPT4gewoKIyAgICAgICAgICAgIFVzZXJUaXRsZSA9PiB7CiMgICAgICAgICAgICAgICAgJ01yLicgPT4gJ01yLicsCiMgICAgICAgICAgICAgICAgJ01ycy4nID0+ICdNcnMuJywKIyAgICAgICAgICAgIH0sCiAgICAgICAgfSwKICAgIH07CgoxOwo=</File>
+    </Filelist>
+</otrs_package>
