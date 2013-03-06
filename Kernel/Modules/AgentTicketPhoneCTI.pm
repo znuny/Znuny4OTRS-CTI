@@ -1,8 +1,6 @@
 # --
-# Kernel/Modules/AgentTicketPhoneCTI.pm - CTI support for phone ticket 
+# Kernel/Modules/AgentTicketPhoneCTI.pm - CTI support for phone ticket
 # Copyright (C) 2012 Znuny GmbH, http://znuny.com/
-# --
-# $Id: $
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -75,7 +73,7 @@ sub Run {
     if ( !$CallerID ) {
         return $Self->{LayoutObject}->Redirect( OP => "$Screen" );
     }
-    
+
     # find customer
     my %CustomerUserList = $Self->{CustomerUserObject}->CustomerSearch(
         Search => $CallerID,
