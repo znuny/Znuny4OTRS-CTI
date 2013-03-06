@@ -3,6 +3,7 @@
     <Name>Znuny4OTRS-CTI</Name>
     <Version>1.0.1</Version>
     <Framework>3.1.x</Framework>
+    <Framework>3.2.x</Framework>
     <Vendor>Znuny GmbH</Vendor>
     <URL>http://znuny.com/</URL>
     <License>GNU AFFERO GENERAL PUBLIC LICENSE Version 3, November 2007</License>
@@ -28,7 +29,7 @@
         </p>
         <br/>
         <br/>
-        <p>Notice: Take care that your phone number is searchable via customer search (in case check Kernel/Config.pm -> CustomerUser -> CustomerUserSearchFields).</p>
+        <p>Notice: For this feature to work your customer phone number needs to be searchable via customer search (Please check out Kernel/Config.pm -> CustomerUser -> CustomerUserSearchFields).</p>
         <br/>
         <br/>
         <p>
@@ -60,7 +61,7 @@
         <p>
         Sie sind gerade dabei, eine Agenten CTI Erweiterung mit folgenden Funktionen zu installieren:
             <ul>
-                <li>Öffnen der Telefon-Maske bei eingehenden Anruf, Vorauswahl des Kunden über die CalleID in der URL (Beispiel URL: otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX).</li>
+                <li>Öffnen der Telefon-Maske bei eingehendem Anruf, Vorauswahl des Kunden über die CalleID in der URL (Beispiel URL: otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX).</li>
             </ul>
         </p>
         <br/>
@@ -78,7 +79,7 @@
     ]]></IntroInstall>
     <IntroInstall Type="post" Title="Post-Installations-Information" Lang="de"><![CDATA[
         <p>
-        Anmerkung: Um die Konfigurations-Optionen zu erreichen, gehe zu
+        Anmerkung: Um die Konfigurations-Optionen zu erreichen, gehen Sie zu
             <ol>
                 <li>Admin</li>
                 <li>SysConfig</li>
