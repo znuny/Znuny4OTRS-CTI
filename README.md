@@ -10,8 +10,8 @@ This package is available free of charge!
 
 **Prerequisites**
 
-- The Znuny4OTRS-Repo package needs to be installed. You will find the package here: [http://znuny.com/d/Znuny4OTRS-Repo-1.0.0.opm](http://znuny.com/d/Znuny4OTRS-Repo-1.0.0.opm "Znuny4OTRS-Repo Download")
-- OTRS 3.1 or OTRS 3.2 needs to be installed
+- The Znuny4OTRS-Repo package needs to be installed. You will find the package here: [http://znuny.com/d/Znuny4OTRS-Repo-1.0.0.opm](http://znuny.com/#!/znuny4otrs "Znuny4OTRS-Repo Download")
+- OTRS 3.1, OTRS 3.2 or OTRS 3.3. needs to be installed
 - An installed telephone client on your workstation which supports URL schemes
 - Configure your local CTI client/agent to open a new browser window (OTRS window) on every incoming phone call. For example: YOUR-OTRS-IP/otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX
  
@@ -65,8 +65,8 @@ Sie können die CTI Integration ohne Lizenzkosten, also kostenfrei nutzen.
 
 **Voraussetzungen:**
 
- - Das OPM-Paket Znuny4OTRS-Repo muss installiert sein. Sie finden das Paket unter folgendem Link: [http://znuny.com/d/Znuny4OTRS-Repo-1.0.0.opm](http://znuny.com/d/Znuny4OTRS-Repo-1.0.0.opm "Znuny4OTRS-Repo Download")
- - OTRS 3.1 oder OTRS 3.2
+ - Das OPM-Paket Znuny4OTRS-Repo muss installiert sein. Sie finden das Paket unter folgendem Link: [http://znuny.com/d/Znuny4OTRS-Repo-1.0.0.opm](http://znuny.com/#!/znuny4otrs "Znuny4OTRS-Repo Download")
+ - OTRS 3.1, OTRS 3.2 oder OTRS 3.3
  - Installierter Telefonie Client auf Ihrem Arbeitsplatzrechnern der URL Schemas unterstützt.
  - Die Telefonnummer muss als suchbares Feld in der Kundensuche eingetragen sein (Überprüfen Sie Kernel/Config.pm -> CustomerUser -> CustomerUserSearchFields)
  - Ihr lokaler CTI client/agent muss so konfiguriert werden, dass bei einem Anruf ein neues OTRS Browser Fenster geöffnet wird. Z.B.: IHRE-OTRS-IP/otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX
