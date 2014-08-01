@@ -14,6 +14,8 @@ This package is available free of charge!
 - OTRS 3.1, OTRS 3.2 or OTRS 3.3. needs to be installed
 - An installed telephone client on your workstation which supports URL schemes
 - Configure your local CTI client/agent to open a new browser window (OTRS window) on every incoming phone call. For example: YOUR-OTRS-IP/otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX
+- We added new parameter screen. If you pass "AgentCustomerInformationCenter" to the screen var, you get linked to the customer information center.
+  YOUR-OTRS-IP/otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX;Screen=AgentCustomerInformationCenter;
  
 - The telephone number needs to be configured as searchable field (Check Kernel/Config.pm -> CustomerUser -> CustomerUserSearchFields)
 
