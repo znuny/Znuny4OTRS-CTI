@@ -40,11 +40,14 @@ sub Run {
     my ( $Self, %Param ) = @_;
 
     # get call params
-    my $CallerID = $Self->{ParamObject}->GetParam( Param => 'CallerID' );
-    my $MSN      = $Self->{ParamObject}->GetParam( Param => 'MSN' );
+    my $CallerID            = $Self->{ParamObject}->GetParam( Param => 'CallerID' );
+    my $MSN                 = $Self->{ParamObject}->GetParam( Param => 'MSN' );
+    my $SelectedScreen      = $Self->{ParamObject}->GetParam( Param => 'Screen' )||'';
 
     # get route for MSN
     my $Screen = 'Action=AgentTicketPhone';
+    my $CustomerScreen = 'Action=AgentCustomerInformationCenter';
+
     if ($MSN) {
         my $MSNMap = $Self->{ConfigObject}->Get('CTI::MSN::Action::Map');
         if ($MSNMap) {
@@ -83,16 +86,37 @@ sub Run {
     }
     my $UserID   = '';
     my $UserName = '';
+    my $CustomerID = '';
+
     for my $KeyCustomerUser ( keys %CustomerUserList ) {
         $UserID   = $KeyCustomerUser;
         $UserName = $CustomerUserList{$KeyCustomerUser};
     }
+    
+    #get customer data for AgentCustomerInformationCenter
+    
+    my %CustomerUserData = $Self->{CustomerUserObject}->CustomerUserDataGet(
+        User => $UserID,
+    );
+    
     $UserName = $Self->{LayoutObject}->LinkEncode($UserName);
+    $CustomerID = $Self->{LayoutObject}->LinkEncode($CustomerUserData{UserCustomerID});
 
-    # redirect to new screen with selected customer
-    $Screen .= "&Subaction=StoreNew&ExpandCustomerName=1&CustomerTicketCounterFromCustomer=1&CustomerSelected=1";
-    $Screen .= "&SelectedCustomerUser=$UserID&CustomerKey_1=$UserID&CustomerTicketText_1=$UserName";
-    $Screen .= "&Subject=&ChallengeToken=$Self->{UserChallengeToken}";
+    if($SelectedScreen eq ''){
+        # redirect to new screen with selected customer
+        $Screen .= "&Subaction=StoreNew&ExpandCustomerName=1&CustomerTicketCounterFromCustomer=1&CustomerSelected=1";
+        $Screen .= "&SelectedCustomerUser=$UserID&CustomerKey_1=$UserID&CustomerTicketText_1=$UserName";
+        $Screen .= "&Subject=&ChallengeToken=$Self->{UserChallengeToken}";
+    }elsif ($SelectedScreen eq 'AgentCustomerInformationCenter'){
+        $Screen = $CustomerScreen;
+        $Screen .= ";CustomerID=$CustomerID";
+    }else{
+        # redirect to new screen with selected customer
+        $Screen .= "&Subaction=StoreNew&ExpandCustomerName=1&CustomerTicketCounterFromCustomer=1&CustomerSelected=1";
+        $Screen .= "&SelectedCustomerUser=$UserID&CustomerKey_1=$UserID&CustomerTicketText_1=$UserName";
+        $Screen .= "&Subject=&ChallengeToken=$Self->{UserChallengeToken}";
+        
+    }
 
     return $Self->{LayoutObject}->Redirect( OP => $Screen );
 }
