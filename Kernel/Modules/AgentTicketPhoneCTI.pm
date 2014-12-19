@@ -1,6 +1,6 @@
 # --
 # Kernel/Modules/AgentTicketPhoneCTI.pm - CTI support for phone ticket
-# Copyright (C) 2012 Znuny GmbH, http://znuny.com/
+# Copyright (C) 2014 Znuny GmbH, http://znuny.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -13,9 +13,6 @@ use strict;
 use warnings;
 use Kernel::System::VariableCheck qw(:all);
 use Kernel::System::CustomerUser;
-
-use vars qw($VERSION);
-$VERSION = qw($Revision: 1.17 $) [1];
 
 sub new {
     my ( $Type, %Param ) = @_;

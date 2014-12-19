@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <otrs_package version="1.0">
     <Name>Znuny4OTRS-CTI</Name>
-    <Version>1.1.5</Version>
+    <Version>1.1.6</Version>
     <ChangeLog Version="1.1.5" Date="2014-08-01 22:42:10 +0200">added new parameter &quot;screen&quot; to call the CustomerInfoCenter cia CTI</ChangeLog>
     <ChangeLog Version="1.1.4" Date="2013-12-10 09:18:38 +0100">updated for 3.3.</ChangeLog>
     <Framework>3.1.x</Framework>
     <Framework>3.2.x</Framework>
     <Framework>3.3.x</Framework>
+    <Framework>4.0.x</Framework>
     <PackageRequired Version="1.0.0">Znuny4OTRS-Repo</PackageRequired>
     <Vendor>Znuny GmbH</Vendor>
     <URL>http://znuny.com/</URL>
