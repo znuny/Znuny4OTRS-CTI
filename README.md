@@ -11,7 +11,7 @@ This package is available free of charge!
 **Prerequisites**
 
 - The Znuny4OTRS-Repo package needs to be installed. You will find the package here: [http://znuny.com/d/Znuny4OTRS-Repo-1.0.0.opm](http://znuny.com/#!/znuny4otrs "Znuny4OTRS-Repo Download")
-- OTRS 3.1, OTRS 3.2 or OTRS 3.3. needs to be installed
+- OTRS 3.1, OTRS 3.2, OTRS 3.3. or OTRS 4.0 needs to be installed
 - An installed telephone client on your workstation which supports URL schemes
 - Configure your local CTI client/agent to open a new browser window (OTRS window) on every incoming phone call. For example: YOUR-OTRS-IP/otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX
 - We added new parameter screen. If you pass "AgentCustomerInformationCenter" to the screen var, you get linked to the customer information center.
