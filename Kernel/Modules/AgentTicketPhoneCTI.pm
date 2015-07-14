@@ -45,6 +45,11 @@ sub Run {
     my $Screen         = 'Action=AgentTicketPhone';
     my $CustomerScreen = 'Action=AgentCustomerInformationCenter';
 
+    # if no caller id, redirect to screen
+    if ( !$CallerID ) {
+        return $Self->{LayoutObject}->Redirect( OP => $Screen );
+    }
+
     if ($MSN) {
         my $MSNMap = $Self->{ConfigObject}->Get('CTI::MSN::Action::Map');
         if ($MSNMap) {
@@ -69,53 +74,63 @@ sub Run {
         }
     }
 
-    # if no caller id, redirect to screen
-    if ( !$CallerID ) {
-        return $Self->{LayoutObject}->Redirect( OP => "$Screen" );
-    }
-
     # find customer
     my %CustomerUserList = $Self->{CustomerUserObject}->CustomerSearch(
         Search => $CallerID,
     );
     if ( !%CustomerUserList ) {
-        return $Self->{LayoutObject}->Redirect( OP => "$Screen" );
-    }
-    my $UserID     = '';
-    my $UserName   = '';
-    my $CustomerID = '';
-
-    for my $KeyCustomerUser ( sort keys %CustomerUserList ) {
-        $UserID   = $KeyCustomerUser;
-        $UserName = $CustomerUserList{$KeyCustomerUser};
+        return $Self->{LayoutObject}->Redirect( OP => $Screen );
     }
 
-    #get customer data for AgentCustomerInformationCenter
+    if ( $SelectedScreen eq 'AgentCustomerInformationCenter' ) {
 
-    my %CustomerUserData = $Self->{CustomerUserObject}->CustomerUserDataGet(
-        User => $UserID,
-    );
+        my $UserID     = '';
+        my $UserName   = '';
+        my $CustomerID = '';
 
-    $UserName   = $Self->{LayoutObject}->LinkEncode($UserName);
-    $CustomerID = $Self->{LayoutObject}->LinkEncode( $CustomerUserData{UserCustomerID} );
+        for my $KeyCustomerUser ( sort keys %CustomerUserList ) {
+            $UserID   = $KeyCustomerUser;
+            $UserName = $CustomerUserList{$KeyCustomerUser};
+        }
 
-    if ( $SelectedScreen eq '' ) {
+        #get customer data for AgentCustomerInformationCenter
 
-        # redirect to new screen with selected customer
-        $Screen .= "&Subaction=StoreNew&ExpandCustomerName=1&CustomerTicketCounterFromCustomer=1&CustomerSelected=1";
-        $Screen .= "&SelectedCustomerUser=$UserID&CustomerKey_1=$UserID&CustomerTicketText_1=$UserName";
-        $Screen .= "&Subject=&ChallengeToken=$Self->{UserChallengeToken}";
-    }
-    elsif ( $SelectedScreen eq 'AgentCustomerInformationCenter' ) {
+        my %CustomerUserData = $Self->{CustomerUserObject}->CustomerUserDataGet(
+            User => $UserID,
+        );
+
+        $UserName   = $Self->{LayoutObject}->LinkEncode($UserName);
+        $CustomerID = $Self->{LayoutObject}->LinkEncode( $CustomerUserData{UserCustomerID} );
+
         $Screen = $CustomerScreen;
         $Screen .= ";CustomerID=$CustomerID";
     }
     else {
         # redirect to new screen with selected customer
-        $Screen .= "&Subaction=StoreNew&ExpandCustomerName=1&CustomerTicketCounterFromCustomer=1&CustomerSelected=1";
-        $Screen .= "&SelectedCustomerUser=$UserID&CustomerKey_1=$UserID&CustomerTicketText_1=$UserName";
-        $Screen .= "&Subject=&ChallengeToken=$Self->{UserChallengeToken}";
+        $Screen .= ";Subaction=StoreNew;CustomerSelected=1";
 
+        my $UserID                 = '';
+        my $UserName               = '';
+        my $SelectedCustomerUserID = '';
+        my $Counter                = 0;
+        for my $KeyCustomerUser ( sort keys %CustomerUserList ) {
+
+            $UserID   = $KeyCustomerUser;
+            $UserName = $CustomerUserList{$KeyCustomerUser};
+
+            # store first to select it
+            if ( !$Counter ) {
+                $SelectedCustomerUserID = $UserID;
+            }
+
+            $Counter++;
+
+            $Screen .= ";CustomerKey_$Counter=$UserID;CustomerTicketText_$Counter=$UserName";
+        }
+
+        $Screen .= ";Subject=;ChallengeToken=$Self->{UserChallengeToken}";
+        $Screen .= ";SelectedCustomerUser=$SelectedCustomerUserID";
+        $Screen .= ";CustomerTicketCounterFromCustomer=$Counter;ExpandCustomerName=1";
     }
 
     return $Self->{LayoutObject}->Redirect( OP => $Screen );
