@@ -1,9 +1,11 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <otrs_package version="1.0">
     <Name>Znuny4OTRS-CTI</Name>
-    <Version>1.2.0</Version>
+    <Version>1.2.2</Version>
+    <ChangeLog Version="1.2.2" Date="2015-07-14 09:30:52 UTC">- Refactored code.&#13;
+- Fixed issue #3: Same phone number for multiple users.</ChangeLog>
     <ChangeLog Version="1.2.0" Date="2015-01-26 12:29:50 +0100">Added OTRS 4.0 support</ChangeLog>
-    <ChangeLog Version="1.1.5" Date="2014-08-01 22:42:10 +0200">added new parameter &quot;screen&quot; to call the CustomerInfoCenter cia CTI</ChangeLog>
+    <ChangeLog Version="1.1.5" Date="2014-08-01 22:42:10 +0200">added new parameter "screen" to call the CustomerInfoCenter cia CTI</ChangeLog>
     <ChangeLog Version="1.1.4" Date="2013-12-10 09:18:38 +0100">updated for 3.3.</ChangeLog>
     <Framework>3.1.x</Framework>
     <Framework>3.2.x</Framework>
