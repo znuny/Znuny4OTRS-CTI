@@ -3,6 +3,7 @@
 # Copyright (C) 2012-2015 Znuny GmbH, http://znuny.com/
 # --
 ## nofilter(TidyAll::Plugin::OTRS::Perl::PerlCritic)
+## nofilter(TidyAll::Plugin::OTRS::Legal::OTRSAGCopyright)
 
     # changed config to also use phone number as seach field
     $Self->{CustomerUser} = {
