@@ -14,6 +14,13 @@ use warnings;
 use Kernel::System::VariableCheck qw(:all);
 use Kernel::System::CustomerUser;
 
+our @ObjectDependencies = (
+    'Kernel::Config',
+    'Kernel::Output::HTML::Layout',
+    'Kernel::System::CustomerUser',
+    'Kernel::System::Web::Request',
+);
+
 sub new {
     my ( $Type, %Param ) = @_;
 
@@ -21,25 +28,21 @@ sub new {
     my $Self = {%Param};
     bless( $Self, $Type );
 
-    # check all needed objects
-    for my $Needed (qw(ParamObject DBObject QueueObject LayoutObject ConfigObject LogObject)) {
-        if ( !$Self->{$Needed} ) {
-            $Self->{LayoutObject}->FatalError( Message => "Got no $Needed!" );
-        }
-    }
-
-    $Self->{CustomerUserObject} = Kernel::System::CustomerUser->new(%Param);
-
     return $Self;
 }
 
 sub Run {
     my ( $Self, %Param ) = @_;
 
+    my $CustomerUserObject = $Kernel::OM->Get('Kernel::System::CustomerUser');
+    my $ConfigObject       = $Kernel::OM->Get('Kernel::Config');
+    my $LayoutObject       = $Kernel::OM->Get('Kernel::Output::HTML::Layout');
+    my $ParamObject        = $Kernel::OM->Get('Kernel::System::Web::Request');
+
     # get call params
-    my $CallerID       = $Self->{ParamObject}->GetParam( Param => 'CallerID' );
-    my $MSN            = $Self->{ParamObject}->GetParam( Param => 'MSN' );
-    my $SelectedScreen = $Self->{ParamObject}->GetParam( Param => 'Screen' ) || '';
+    my $CallerID       = $ParamObject->GetParam( Param => 'CallerID' );
+    my $MSN            = $ParamObject->GetParam( Param => 'MSN' );
+    my $SelectedScreen = $ParamObject->GetParam( Param => 'Screen' ) || '';
 
     # get route for MSN
     my $Screen         = 'Action=AgentTicketPhone';
@@ -47,11 +50,11 @@ sub Run {
 
     # if no caller id, redirect to screen
     if ( !$CallerID ) {
-        return $Self->{LayoutObject}->Redirect( OP => $Screen );
+        return $LayoutObject->Redirect( OP => $Screen );
     }
 
     if ($MSN) {
-        my $MSNMap = $Self->{ConfigObject}->Get('CTI::MSN::Action::Map');
+        my $MSNMap = $ConfigObject->Get('CTI::MSN::Action::Map');
         if ($MSNMap) {
             my $ScreenMap = '';
             for my $Key ( sort keys %{$MSNMap} ) {
@@ -75,11 +78,11 @@ sub Run {
     }
 
     # find customer
-    my %CustomerUserList = $Self->{CustomerUserObject}->CustomerSearch(
+    my %CustomerUserList = $CustomerUserObject->CustomerSearch(
         Search => $CallerID,
     );
     if ( !%CustomerUserList ) {
-        return $Self->{LayoutObject}->Redirect( OP => $Screen );
+        return $LayoutObject->Redirect( OP => $Screen );
     }
 
     if ( $SelectedScreen eq 'AgentCustomerInformationCenter' ) {
@@ -95,12 +98,12 @@ sub Run {
 
         #get customer data for AgentCustomerInformationCenter
 
-        my %CustomerUserData = $Self->{CustomerUserObject}->CustomerUserDataGet(
+        my %CustomerUserData = $CustomerUserObject->CustomerUserDataGet(
             User => $UserID,
         );
 
-        $UserName   = $Self->{LayoutObject}->LinkEncode($UserName);
-        $CustomerID = $Self->{LayoutObject}->LinkEncode( $CustomerUserData{UserCustomerID} );
+        $UserName   = $LayoutObject->LinkEncode($UserName);
+        $CustomerID = $LayoutObject->LinkEncode( $CustomerUserData{UserCustomerID} );
 
         $Screen = $CustomerScreen;
         $Screen .= ";CustomerID=$CustomerID";
@@ -126,10 +129,10 @@ sub Run {
 
             $Counter++;
 
-            my %CustomerUserData = $Self->{CustomerUserObject}->CustomerUserDataGet(
+            my %CustomerUserData = $CustomerUserObject->CustomerUserDataGet(
                 User => $UserID,
             );
-            $CustomerID = $Self->{LayoutObject}->LinkEncode( $CustomerUserData{UserCustomerID} );
+            $CustomerID = $LayoutObject->LinkEncode( $CustomerUserData{UserCustomerID} );
             $Screen .= ";CustomerKey_$Counter=$UserID;CustomerID=$CustomerID;CustomerTicketText_$Counter=$UserName";
         }
 
@@ -138,7 +141,7 @@ sub Run {
         $Screen .= ";CustomerTicketCounterFromCustomer=$Counter;ExpandCustomerName=3";
     }
 
-    return $Self->{LayoutObject}->Redirect( OP => $Screen );
+    return $LayoutObject->Redirect( OP => $Screen );
 }
 
 1;
