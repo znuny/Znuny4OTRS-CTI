@@ -22,9 +22,9 @@ sub new {
     bless( $Self, $Type );
 
     # check all needed objects
-    for (qw(ParamObject DBObject QueueObject LayoutObject ConfigObject LogObject)) {
-        if ( !$Self->{$_} ) {
-            $Self->{LayoutObject}->FatalError( Message => "Got no $_!" );
+    for my $Needed (qw(ParamObject DBObject QueueObject LayoutObject ConfigObject LogObject)) {
+        if ( !$Self->{$Needed} ) {
+            $Self->{LayoutObject}->FatalError( Message => "Got no $Needed!" );
         }
     }
 
@@ -111,6 +111,7 @@ sub Run {
 
         my $UserID                 = '';
         my $UserName               = '';
+        my $CustomerID             = '';
         my $SelectedCustomerUserID = '';
         my $Counter                = 0;
         for my $KeyCustomerUser ( sort keys %CustomerUserList ) {
@@ -125,12 +126,16 @@ sub Run {
 
             $Counter++;
 
-            $Screen .= ";CustomerKey_$Counter=$UserID;CustomerTicketText_$Counter=$UserName";
+            my %CustomerUserData = $Self->{CustomerUserObject}->CustomerUserDataGet(
+                User => $UserID,
+            );
+            $CustomerID = $Self->{LayoutObject}->LinkEncode( $CustomerUserData{UserCustomerID} );
+            $Screen .= ";CustomerKey_$Counter=$UserID;CustomerID=$CustomerID;CustomerTicketText_$Counter=$UserName";
         }
 
         $Screen .= ";Subject=;ChallengeToken=$Self->{UserChallengeToken}";
         $Screen .= ";SelectedCustomerUser=$SelectedCustomerUserID";
-        $Screen .= ";CustomerTicketCounterFromCustomer=$Counter;ExpandCustomerName=1";
+        $Screen .= ";CustomerTicketCounterFromCustomer=$Counter;ExpandCustomerName=3";
     }
 
     return $Self->{LayoutObject}->Redirect( OP => $Screen );
