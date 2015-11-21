@@ -41,6 +41,14 @@ Group "CTI"-->
 
 (The use of the URL otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX should be sufficient in most cases)
 
+**Tested VoIP-clients**
+- Cisco Agent Desktop
+- Zoiper
+- Blink Pro
+- Express Talk
+
+If you know a client which works just let us know and we'll add him.
+
 ---------------------------
 
 For further questions and commercial support please don't hesitate to contact us via support(at)znuny.com.
