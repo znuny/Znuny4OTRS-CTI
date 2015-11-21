@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <otrs_package version="1.0">
     <Name>Znuny4OTRS-CTI</Name>
-    <Version>1.3.0</Version>
+    <Version>1.3.1</Version>
+    <ChangeLog Version="1.3.1" Date="2015-11-21 11:47:36 UTC">updated docs</ChangeLog>
     <ChangeLog Version="1.3.0" Date="2015-11-09 17:07:58 UTC">Ported to OTRS 5.</ChangeLog>
     <Framework>5.0.x</Framework>
     <PackageRequired Version="3.0.0">Znuny4OTRS-Repo</PackageRequired>
