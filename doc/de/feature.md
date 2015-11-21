@@ -2,15 +2,15 @@
 
 **Wichtige Hinweise:**
 
-Sie können die CTI Integration ohne Lizenzkosten, also kostenfrei nutzen.
+Sie können die CTI Integration ohne Lizenzkosten, also kostenfrei, nutzen.
 
 **Voraussetzungen:**
 
  - Das OPM-Paket Znuny4OTRS-Repo muss installiert sein. Sie finden das Paket unter folgendem Link: [http://znuny.com/#!/znuny4otrs](http://znuny.com/#!/znuny4otrs "Znuny4OTRS-Repo Download")
- - OTRS 3.1, OTRS 3.2, OTRS 3.3 oder OTRS 4.0
- - Installierter Telefonie Client auf Ihren Arbeitsplatzrechnern, der URL Schemas unterstützt.
- - Die Telefonnummer muss als suchbares Feld in der Kundensuche eingetragen sein (Überprüfen Sie Kernel/Config.pm -> CustomerUser -> CustomerUserSearchFields)
- - Ihr lokaler CTI Client/Agent muss so konfiguriert werden, dass bei einem Anruf ein neues OTRS Browser Fenster geöffnet wird. Z.B.: IHRE-OTRS-IP/otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX
+ - OTRS 4 oder OTRS 5
+ - Installierter Telefonie-Client auf Ihren Arbeitsplatzrechnern, der bei eingehenden Anrufen eine URL aufrufen kann und optional ausgehnde Anrufe über URL Schemas unterstützt.
+ - Die Telefonnummer muss als suchbares Feld in der Kundensuche konfiguriert sein sein (Überprüfen Sie Kernel/Config.pm -> CustomerUser -> CustomerUserSearchFields)
+ - Ihr lokaler Telefonie-Client muss so konfiguriert werden, dass bei einem Anruf ein neues OTRS Browser Fenster geöffnet wird. Z.B.: IHR-OTRS-HOST/otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX
 
 Bei einem Anruf ruft der Telefonie Client die entsprechende OTRS-URL mit der Telefonnummer des Anrufers auf und öffnet ein OTRS Telefon-Ticket. Sofern Sie Ihre Kundendaten in OTRS haben, kann eine Telefonnummer mit einer URL versehen werden um externe Anrufe zu starten.
 
