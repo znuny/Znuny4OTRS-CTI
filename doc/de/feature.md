@@ -8,7 +8,7 @@ Sie können die CTI Integration ohne Lizenzkosten, also kostenfrei, nutzen.
 
  - Das OPM-Paket Znuny4OTRS-Repo muss installiert sein. Sie finden das Paket unter folgendem Link: [http://znuny.com/#!/znuny4otrs](http://znuny.com/#!/znuny4otrs "Znuny4OTRS-Repo Download")
  - OTRS 4 oder OTRS 5
- - Installierter Telefonie-Client auf Ihren Arbeitsplatzrechnern, der bei eingehenden Anrufen eine URL aufrufen kann und optional ausgehnde Anrufe über URL Schemas unterstützt.
+ - Installierter Telefonie-Client auf Ihren Arbeitsplatzrechnern, der bei eingehenden Anrufen eine URL aufrufen kann und optional ausgehende Anrufe über URL Schemas unterstützt.
  - Die Telefonnummer muss als suchbares Feld in der Kundensuche konfiguriert sein sein (Überprüfen Sie Kernel/Config.pm -> CustomerUser -> CustomerUserSearchFields)
  - Ihr lokaler Telefonie-Client muss so konfiguriert werden, dass bei einem Anruf ein neues OTRS Browser Fenster geöffnet wird. Z.B.: IHR-OTRS-HOST/otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX
 
@@ -37,6 +37,13 @@ Untergruppe "MSN"
 
 (Die Benutzung über die URL otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX)
 
+**Getestete VoIP-Clients**
+- Cisco Agent Desktop
+- Zoiper
+- Blink Pro
+- Express Talk
+
+Sollten Sie einen weiteren Client kennen der mit diesem Addon funktioniert lassen Sie es uns wissen und wir fügen Ihn hinzu.
 ------------------------
 
 Für Fragen stehen wir Ihnen jederzeit gern unter support(at)znuny.com zur Verfügung.
