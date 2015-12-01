@@ -15,7 +15,7 @@ This package is available free of charge!
 
 - The telephone number needs to be configured as a searchable field (Check Kernel/Config.pm -> CustomerUser -> CustomerUserSearchFields)
 
-If the caller is stored with his caller-id in the local database, the ticket create screen will be opened and the caller will be pre selected as customer. If you already have your customerdata in OTRS, the phonenumber might be provided with a URL to start external phonecalls.
+If the caller is stored with his caller-id in the local database, the ticket create screen will be opened and the caller will be preselected as customer. If you already have your customerdata in OTRS, the phonenumber might be provided with a URL to start external phonecalls.
 
 **Installation:**
 
