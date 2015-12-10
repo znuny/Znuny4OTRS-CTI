@@ -112,9 +112,12 @@ sub Run {
         # redirect to new screen with selected customer
         $Screen .= ";Subaction=StoreNew;CustomerSelected=1";
 
+        my $MaxUsers = $Self->{ConfigObject}->Get('CTI::MaxUsers');
+
         my $CustomerID             = '';
         my $SelectedCustomerUserID = '';
         my $Counter                = 0;
+        CUSTOMER:
         for my $CustomerUserID ( sort keys %CustomerUserList ) {
 
             my $UserName = $CustomerUserList{$CustomerUserID};
@@ -132,6 +135,10 @@ sub Run {
             $Counter++;
 
             $Screen .= ";CustomerKey_$Counter=$CustomerUserID;CustomerTicketText_$Counter=$UserName";
+
+            next CUSTOMER if !$MaxUsers;
+            next CUSTOMER if $Counter lt $MaxUsers;
+            last CUSTOMER;
         }
         $CustomerID = $LayoutObject->LinkEncode($CustomerID);
 

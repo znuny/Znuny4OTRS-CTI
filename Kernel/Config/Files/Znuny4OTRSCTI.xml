@@ -22,4 +22,12 @@
                 </Hash>
             </Setting>
     </ConfigItem>
+    <ConfigItem Name="CTI::MaxUsers" Required="0" Valid="0">
+        <Description Translatable="1">This configuration defines the maximum of CustomerUsers that should get added to the the AgentTicketPhone view.</Description>
+        <Group>Znuny4OTRS-CTI</Group>
+        <SubGroup>Core</SubGroup>
+        <Setting>
+            <String Regex="\d+">1</String>
+        </Setting>
+    </ConfigItem>
 </otrs_config>
