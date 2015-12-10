@@ -21,8 +21,8 @@
     <Description Lang="de">URL-CTI Unterstützung für eingehende Anrufe.</Description>
     <Filelist>
         <File Permission="644" Location="Kernel/Modules/AgentTicketPhoneCTI.pm"/>
-        <File Permission="644" Location="Kernel/Config/Files/CTI.xml"/>
-        <File Permission="644" Location="Kernel/Config/Files/ZCTI.pm"/>
+        <File Permission="644" Location="Kernel/Config/Files/Znuny4OTRSCTI.xml"/>
+        <File Permission="644" Location="Kernel/Config/Files/Znuny4OTRSCTI.pm"/>
     </Filelist>
     <IntroInstall Type="pre" Title="Pre-Install Information" Lang="en"><![CDATA[
         <br/>
