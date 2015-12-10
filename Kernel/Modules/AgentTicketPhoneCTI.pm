@@ -112,7 +112,7 @@ sub Run {
         # redirect to new screen with selected customer
         $Screen .= ";Subaction=StoreNew;CustomerSelected=1";
 
-        my $MaxUsers = $Self->{ConfigObject}->Get('CTI::MaxUsers');
+        my $MaxUsers = $ConfigObject->Get('CTI::MaxUsers');
 
         my $CustomerID             = '';
         my $SelectedCustomerUserID = '';
@@ -122,7 +122,7 @@ sub Run {
 
             my $UserName = $CustomerUserList{$CustomerUserID};
 
-            my %CustomerUserData = $Self->{CustomerUserObject}->CustomerUserDataGet(
+            my %CustomerUserData = $CustomerUserObject->CustomerUserDataGet(
                 User => $CustomerUserID,
             );
 
