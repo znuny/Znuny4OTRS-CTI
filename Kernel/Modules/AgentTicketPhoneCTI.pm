@@ -109,32 +109,31 @@ sub Run {
         # redirect to new screen with selected customer
         $Screen .= ";Subaction=StoreNew;CustomerSelected=1";
 
-        my $UserID                 = '';
-        my $UserName               = '';
         my $CustomerID             = '';
         my $SelectedCustomerUserID = '';
         my $Counter                = 0;
-        for my $KeyCustomerUser ( sort keys %CustomerUserList ) {
+        for my $CustomerUserID ( sort keys %CustomerUserList ) {
 
-            $UserID   = $KeyCustomerUser;
-            $UserName = $CustomerUserList{$KeyCustomerUser};
+            my $UserName = $CustomerUserList{$CustomerUserID};
+
+            my %CustomerUserData = $Self->{CustomerUserObject}->CustomerUserDataGet(
+                User => $CustomerUserID,
+            );
 
             # store first to select it
             if ( !$Counter ) {
-                $SelectedCustomerUserID = $UserID;
+                $SelectedCustomerUserID = $CustomerUserID;
+                $CustomerID             = $CustomerUserData{UserCustomerID};
             }
 
             $Counter++;
 
-            my %CustomerUserData = $Self->{CustomerUserObject}->CustomerUserDataGet(
-                User => $UserID,
-            );
-            $CustomerID = $Self->{LayoutObject}->LinkEncode( $CustomerUserData{UserCustomerID} );
-            $Screen .= ";CustomerKey_$Counter=$UserID;CustomerID=$CustomerID;CustomerTicketText_$Counter=$UserName";
+            $Screen .= ";CustomerKey_$Counter=$CustomerUserID;CustomerTicketText_$Counter=$UserName";
         }
+        $CustomerID = $Self->{LayoutObject}->LinkEncode($CustomerID);
 
         $Screen .= ";Subject=;ChallengeToken=$Self->{UserChallengeToken}";
-        $Screen .= ";SelectedCustomerUser=$SelectedCustomerUserID";
+        $Screen .= ";SelectedCustomerUser=$SelectedCustomerUserID;CustomerID=$CustomerID";
         $Screen .= ";CustomerTicketCounterFromCustomer=$Counter;ExpandCustomerName=3";
     }
 
