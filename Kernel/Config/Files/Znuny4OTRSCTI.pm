@@ -1,5 +1,5 @@
 # --
-# Kernel/Config/Files/ZCTI.pm - adds phone to CustomerUserSearchFields
+# Kernel/Config/Files/Znuny4OTRSCTI.pm - adds phone to CustomerUserSearchFields
 # Copyright (C) 2012-2015 Znuny GmbH, http://znuny.com/
 # --
 ## nofilter(TidyAll::Plugin::OTRS::Perl::PerlCritic)
