@@ -52,7 +52,7 @@
                 <li>Group "CTI"</li>
                 <li>Subgroup "MSN"</li>
             </ol>
-            (<a href="index.pl?Action=AdminSysConfig;Subaction=Edit;SysConfigSubGroup=MSN;SysConfigGroup=CTI">go here directly</a>) - only needed in expert mode - otherwise just use the URL otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX)</a>
+            (<a href="index.pl?Action=AdminSysConfig;Subaction=Edit;SysConfigSubGroup=MSN;SysConfigGroup=Znuny4OTRS-CTI">go here directly</a>) - only needed in expert mode - otherwise just use the URL otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX)</a>
         </p>
     ]]></IntroInstall>
     <IntroInstall Type="pre" Title="Pre-Installations-Information" Lang="de"><![CDATA[
@@ -89,7 +89,7 @@
                 <li>Gruppe "CTI"</li>
                 <li>Untergruppe "MSN"</li>
             </ol>
-            (<a href="index.pl?Action=AdminSysConfig;Subaction=Edit;SysConfigSubGroup=MSN;SysConfigGroup=CTI">SysConfig Einstellungen für den Experten-Mode</a> - normal reicht die Benutzung über die URL otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX)</a>
+            (<a href="index.pl?Action=AdminSysConfig;Subaction=Edit;SysConfigSubGroup=MSN;SysConfigGroup=Znuny4OTRS-CTI">SysConfig Einstellungen für den Experten-Mode</a> - normal reicht die Benutzung über die URL otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX)</a>
         </p>
     ]]></IntroInstall>
 </otrs_package>
