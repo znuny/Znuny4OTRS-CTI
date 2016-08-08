@@ -1,4 +1,4 @@
-![Znuny logo](http://znuny.com/assets/logo_small.png)
+![Znuny logo](http://znuny.com/assets/images/logo_small.png)
 
 # Installation manual for Znuny4OTRS-CTI #
 
