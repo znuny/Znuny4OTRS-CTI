@@ -21,9 +21,9 @@
     <Description Lang="en">URL-CTI Support for incoming calls.</Description>
     <Description Lang="de">URL-CTI Unterstützung für eingehende Anrufe.</Description>
     <Filelist>
-        <File Permission="644" Location="Kernel/Modules/AgentTicketPhoneCTI.pm"/>
-        <File Permission="644" Location="Kernel/Config/Files/Znuny4OTRSCTI.xml"/>
         <File Permission="644" Location="Kernel/Config/Files/Znuny4OTRSCTI.pm"/>
+        <File Permission="644" Location="Kernel/Config/Files/Znuny4OTRSCTI.xml"/>
+        <File Permission="644" Location="Kernel/Modules/AgentTicketPhoneCTI.pm"/>
     </Filelist>
     <IntroInstall Type="pre" Title="Pre-Install Information" Lang="en"><![CDATA[
         <br/>
@@ -31,7 +31,6 @@
         Welcome to <u>Znuny4OTRS CTI</u>!
         <br/>
         <br/>
-
         <p>
         You are about to install a CTI extention with the following features:
             <ul>
