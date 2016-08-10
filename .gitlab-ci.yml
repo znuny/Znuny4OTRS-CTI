@@ -1,0 +1,13 @@
+image: otrs4ci
+
+stages:
+  - deploy
+
+job_deploy_otrs_Znuny4OTRSCTI:
+  stage: deploy
+  script:
+    - git checkout $CI_BUILD_REF_NAME
+    - git pull --rebase origin $CI_BUILD_REF_NAME
+    - git filter-branch --force --index-filter "git rm --cached --ignore-unmatch './.gitlab-ci.yml'" --prune-empty --tag-name-filter cat -- $CI_BUILD_REF_NAME
+    - if ! git remote | grep github > /dev/null; then git remote add --mirror github git@github.com:znuny/Znuny4OTRS-CTI.git; fi
+    - git push github
