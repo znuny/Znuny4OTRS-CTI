@@ -1,6 +1,5 @@
 # --
-# Kernel/Modules/AgentTicketPhoneCTI.pm - CTI support for phone ticket
-# Copyright (C) 2012-2015 Znuny GmbH, http://znuny.com/
+# Copyright (C) 2012-2016 Znuny GmbH, http://znuny.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -57,6 +56,7 @@ sub Run {
         my $MSNMap = $ConfigObject->Get('CTI::MSN::Action::Map');
         if ($MSNMap) {
             my $ScreenMap = '';
+            KEY:
             for my $Key ( sort keys %{$MSNMap} ) {
 
                 # set default
@@ -64,10 +64,10 @@ sub Run {
                     $ScreenMap = $MSNMap->{$Key};
                 }
 
+                next KEY if $MSN !~ /$Key/;
+
                 # set new route
-                if ( $MSN =~ /$Key/ ) {
-                    $ScreenMap = $MSNMap->{$Key};
-                }
+                $ScreenMap = $MSNMap->{$Key};
             }
 
             # set new screen
