@@ -134,6 +134,7 @@ sub Run {
 
             $Counter++;
 
+            $UserName = $LayoutObject->LinkEncode($UserName);
             $Screen .= ";CustomerKey_$Counter=$CustomerUserID;CustomerTicketText_$Counter=$UserName";
 
             next CUSTOMER if !$MaxUsers;
