@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <otrs_package version="1.0">
     <Name>Znuny4OTRS-CTI</Name>
-    <Version>1.2.5</Version>
+    <Version>4.0.1</Version>
+    <ChangeLog Version="4.0.1" Date="2016-09-06 20:18:10 +0200">Fixed: Can not auto fill email address in IE11 #6.</ChangeLog>
     <ChangeLog Version="1.2.5" Date="2015-12-10 10:29:57 UTC">Added SysConfig to define the max users that should get added to the AgentTicketPhone view.</ChangeLog>
     <ChangeLog Version="1.2.4" Date="2015-11-21 11:47:53 UTC">updated docs</ChangeLog>
     <ChangeLog Version="1.2.3" Date="2015-11-09 09:18:00 UTC">Fixed bug: Missing CustomerID after submit new phoneticket.</ChangeLog>
