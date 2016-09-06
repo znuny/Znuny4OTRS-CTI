@@ -1,6 +1,6 @@
 # --
 # Kernel/Modules/AgentTicketPhoneCTI.pm - CTI support for phone ticket
-# Copyright (C) 2012-2015 Znuny GmbH, http://znuny.com/
+# Copyright (C) 2012-2016 Znuny GmbH, http://znuny.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -22,10 +22,12 @@ sub new {
     bless( $Self, $Type );
 
     # check all needed objects
+    NEEDED:
     for my $Needed (qw(ParamObject DBObject QueueObject LayoutObject ConfigObject LogObject)) {
-        if ( !$Self->{$Needed} ) {
-            $Self->{LayoutObject}->FatalError( Message => "Got no $Needed!" );
-        }
+
+        next NEEDED if $Self->{$Needed};
+
+        $Self->{LayoutObject}->FatalError( Message => "Got no $Needed!" );
     }
 
     $Self->{CustomerUserObject} = Kernel::System::CustomerUser->new(%Param);
@@ -54,6 +56,7 @@ sub Run {
         my $MSNMap = $Self->{ConfigObject}->Get('CTI::MSN::Action::Map');
         if ($MSNMap) {
             my $ScreenMap = '';
+            KEY:
             for my $Key ( sort keys %{$MSNMap} ) {
 
                 # set default
@@ -61,10 +64,10 @@ sub Run {
                     $ScreenMap = $MSNMap->{$Key};
                 }
 
+                next KEY if $MSN !~ /$Key/;
+
                 # set new route
-                if ( $MSN =~ /$Key/ ) {
-                    $ScreenMap = $MSNMap->{$Key};
-                }
+                $ScreenMap = $MSNMap->{$Key};
             }
 
             # set new screen
@@ -131,7 +134,7 @@ sub Run {
 
             $Counter++;
 
-            $UserName = $LayoutObject->LinkEncode($UserName);
+            $UserName = $Self->{LayoutObject}->LinkEncode($UserName);
             $Screen .= ";CustomerKey_$Counter=$CustomerUserID;CustomerTicketText_$Counter=$UserName";
 
             next CUSTOMER if !$MaxUsers;
