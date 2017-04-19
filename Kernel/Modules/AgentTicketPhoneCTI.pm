@@ -47,8 +47,11 @@ sub Run {
     my $Screen         = 'Action=AgentTicketPhone';
     my $CustomerScreen = 'Action=AgentCustomerInformationCenter';
 
-    # if no caller id, redirect to screen
-    if ( !$CallerID ) {
+    my $CallerIDReg = $ConfigObject->Get('CTI::CallerIDReg') || '^.+$';
+    my $RegEx = qr/$CallerIDReg/;
+
+    # if no caller id or caller id do not match caller id regular expression, redirect to screen
+    if ( !$CallerID || $CallerID !~ m/$RegEx/ ) {
         return $LayoutObject->Redirect( OP => $Screen );
     }
 
