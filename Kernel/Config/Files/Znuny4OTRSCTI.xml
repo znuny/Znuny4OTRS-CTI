@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
+<!-- nofilter(TidyAll::Plugin::OTRS::Znuny4OTRS::ACLKeysLevel3Actions) -->
 <otrs_config version="1.0" init="Application">
     <ConfigItem Name="Frontend::Module###AgentTicketPhoneCTI" Required="0" Valid="1">
         <Description Translatable="1">Frontend module registration for the agent interface. E. g. 'otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX;MSN=XXX'.</Description>
