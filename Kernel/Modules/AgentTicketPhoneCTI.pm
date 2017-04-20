@@ -1,6 +1,5 @@
 # --
-# Kernel/Modules/AgentTicketPhoneCTI.pm - CTI support for phone ticket
-# Copyright (C) 2012-2015 Znuny GmbH, http://znuny.com/
+# Copyright (C) 2012-2017 Znuny GmbH, http://znuny.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -22,10 +21,10 @@ sub new {
     bless( $Self, $Type );
 
     # check all needed objects
+    NEEDED:
     for my $Needed (qw(ParamObject DBObject QueueObject LayoutObject ConfigObject LogObject)) {
-        if ( !$Self->{$Needed} ) {
-            $Self->{LayoutObject}->FatalError( Message => "Got no $Needed!" );
-        }
+        next NEEDED if defined $Self->{$Needed};
+        $Self->{LayoutObject}->FatalError( Message => "Got no $Needed!" );
     }
 
     $Self->{CustomerUserObject} = Kernel::System::CustomerUser->new(%Param);
@@ -45,8 +44,16 @@ sub Run {
     my $Screen         = 'Action=AgentTicketPhone';
     my $CustomerScreen = 'Action=AgentCustomerInformationCenter';
 
-    # if no caller id, redirect to screen
-    if ( !$CallerID ) {
+    # redirect to screen if no caller ID or caller ID does not match caller ID regular expression
+    my $CallerIDRegEx = $Self->{ConfigObject}->Get('CTI::CallerIDRegEx');
+    if (
+        !defined $CallerID
+        || (
+            defined $CallerIDRegEx
+            && $CallerID !~ m{$CallerIDRegEx}
+        )
+        )
+    {
         return $Self->{LayoutObject}->Redirect( OP => $Screen );
     }
 

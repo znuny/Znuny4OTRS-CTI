@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
+<!-- nofilter(TidyAll::Plugin::OTRS::Znuny4OTRS::ACLKeysLevel3Actions) -->
 <otrs_config version="1.0" init="Application">
     <ConfigItem Name="Frontend::Module###AgentTicketPhoneCTI" Required="0" Valid="1">
         <Description Translatable="1">Frontend module registration for the agent interface. E. g. 'otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX;MSN=XXX'.</Description>
-        <Group>CTI</Group>
+        <Group>Znuny4OTRS-CTI</Group>
         <SubGroup>Frontend::Agent::ModuleRegistration</SubGroup>
         <Setting>
             <FrontendModuleReg>
@@ -14,12 +15,20 @@
     </ConfigItem>
     <ConfigItem Name="CTI::MSN::Action::Map" Required="0" Valid="1">
         <Description Translatable="1">Expert Setting - not needed in standard setup! Defines the Action based on MSN, e. g. route incoming calls to different frontend modules (Key=Number,Value=Frontend-Module e. g. Key=1222,Value=AgentTicketPhoneHotline).</Description>
-        <Group>CTI</Group>
+        <Group>Znuny4OTRS-CTI</Group>
         <SubGroup>MSN</SubGroup>
             <Setting>
                 <Hash>
                     <Item Key="">AgentTicketPhone</Item>
                 </Hash>
             </Setting>
+    </ConfigItem>
+    <ConfigItem Name="CTI::CallerIDRegEx" Required="0" Valid="1">
+        <Description Translatable="1">Regular expression for the CallerID.</Description>
+        <Group>Znuny4OTRS-CTI</Group>
+        <SubGroup>Core</SubGroup>
+        <Setting>
+            <String Regex="">^.+$</String>
+        </Setting>
     </ConfigItem>
 </otrs_config>
