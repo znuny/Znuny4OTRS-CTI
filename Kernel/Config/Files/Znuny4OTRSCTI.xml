@@ -31,12 +31,12 @@
             <String Regex="\d+">1</String>
         </Setting>
     </ConfigItem>
-    <ConfigItem Name="CTI::CallerIDReg" Required="0" Valid="1">
-        <Description Translatable="1">This configuration defines the regular expression for the CallerID.</Description>
+    <ConfigItem Name="CTI::CallerIDRegEx" Required="0" Valid="1">
+        <Description Translatable="1">Regular expression for the CallerID.</Description>
         <Group>Znuny4OTRS-CTI</Group>
         <SubGroup>Core</SubGroup>
         <Setting>
-            <String Regex="">^\d+$</String>
+            <String Regex="">^.+$</String>
         </Setting>
     </ConfigItem>
 </otrs_config>
