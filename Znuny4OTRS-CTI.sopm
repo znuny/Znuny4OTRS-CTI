@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <otrs_package version="1.0">
     <Name>Znuny4OTRS-CTI</Name>
-    <Version>1.2.3</Version>
+    <Version>4.0.2</Version>
+    <ChangeLog Version="4.0.2" Date="2017-04-20 10:07:28 +0200">Added CallerID regex.</ChangeLog>
     <ChangeLog Version="1.2.3" Date="2015-11-09 09:18:00 UTC">Fixed bug: Missing CustomerID after submit new phoneticket.</ChangeLog>
     <ChangeLog Version="1.2.2" Date="2015-07-14 09:30:52 UTC">- Refactored code.&#13;
 - Fixed issue #3: Same phone number for multiple users.</ChangeLog>
