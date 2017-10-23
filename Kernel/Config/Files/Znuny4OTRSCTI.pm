@@ -1,9 +1,21 @@
-    # --
-    # Copyright (C) 2012-2017 Znuny GmbH, http://znuny.com/
-    # --
-## nofilter(TidyAll::Plugin::OTRS::Perl::PerlCritic)
-## nofilter(TidyAll::Plugin::OTRS::Legal::OTRSAGCopyright)
-## nofilter(TidyAll::Plugin::OTRS::Legal::AGPLValidator)
+# VERSION:1.1
+# --
+# Copyright (C) 2012-2017 Znuny GmbH, http://znuny.com/
+# --
+# This software comes with ABSOLUTELY NO WARRANTY. For details, see
+# the enclosed file COPYING for license information (AGPL). If you
+# did not receive this file, see http://www.gnu.org/licenses/agpl.txt.
+# --
+
+package Kernel::Config::Files::Znuny4OTRSCTI;
+
+use strict;
+use warnings;
+
+use utf8;
+
+sub Load {
+    my ( $File, $Self ) = @_;
 
     # changed config to also use phone number as seach field
     $Self->{CustomerUser} = {
@@ -98,4 +110,7 @@
         },
     };
 
-    1;
+    return 1;
+}
+
+1;
