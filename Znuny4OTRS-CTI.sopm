@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <otrs_package version="1.0">
     <Name>Znuny4OTRS-CTI</Name>
-    <Version>6.0.1</Version>
+    <Version>6.0.2</Version>
+    <ChangeLog Version="6.0.2" Date="2018-11-01 23:00:27 +0100">Tidied code.</ChangeLog>
     <ChangeLog Version="6.0.1" Date="2017-10-23 14:20:59 +0200">Initial release 6.0.x.</ChangeLog>
     <ChangeLog Version="5.0.2" Date="2017-04-20 10:07:36 +0200">Added CallerID regex.</ChangeLog>
     <ChangeLog Version="5.0.1" Date="2016-09-06 20:18:02 +0200">Fixed: Can not auto fill email address in IE11 #6.</ChangeLog>
