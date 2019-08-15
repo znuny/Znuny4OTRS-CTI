@@ -1,7 +1,20 @@
-image: otrs5ci
+image: registry.znuny.com/znuny/docker-otrs5ci:latest
 
 stages:
+  - test
   - deploy
+
+mysql:
+  stage: test
+  services:
+    - name: registry.znuny.com/znuny/docker-mysql-utf8:latest
+      alias: mysql
+  script:
+    - env
+    - pwd
+    - /run.sh
+    - su -c "perl /opt/otrs/bin/otrs.Console.pl Znuny4OTRS::AdvancedPackageManager::InstallSOPM /opt/otrs/Znuny4OTRS-CTI.sopm" -s /bin/bash otrs
+    - su -c "perl /opt/otrs/bin/otrs.Console.pl Dev::UnitTest::Run --verbose --test Znuny4OTRSCTI/FilterCallerID" -s /bin/bash otrs
 
 job_deploy_otrs_Znuny4OTRSCTI:
   stage: deploy
