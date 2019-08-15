@@ -17,6 +17,7 @@ our @ObjectDependencies = (
     'Kernel::Config',
     'Kernel::Output::HTML::Layout',
     'Kernel::System::CustomerUser',
+    'Kernel::System::Log',
     'Kernel::System::Web::Request',
 );
 
@@ -84,6 +85,11 @@ sub Run {
             }
         }
     }
+
+    # filter caller id
+    $CallerID = $Self->FilterCallerID(
+        CallerID => $CallerID,
+    );
 
     # find customer
     my %CustomerUserList = $CustomerUserObject->CustomerSearch(
@@ -157,6 +163,57 @@ sub Run {
     }
 
     return $LayoutObject->Redirect( OP => $Screen );
+}
+
+=head2 FilterCallerID()
+
+This function will filter the caller id based on a regex list.
+The result is based on the configuration in:
+CTI::FilterCallerRegEx
+
+    my $CallerID = $FrontendObject->FilterCallerID(
+        CallerID => '+49 1111',
+    );
+
+Returns:
+
+    my $CallerID = '00491111';
+
+=cut
+
+sub FilterCallerID {
+    my ( $Self, %Param ) = @_;
+
+    my $ConfigObject = $Kernel::OM->Get('Kernel::Config');
+    my $LogObject    = $Kernel::OM->Get('Kernel::System::Log');
+
+    # check needed stuff
+    NEEDED:
+    for my $Needed (qw(CallerID)) {
+        next NEEDED if defined $Param{$Needed};
+
+        $LogObject->Log(
+            Priority => 'error',
+            Message  => "Parameter '$Needed' is needed!",
+        );
+        return;
+    }
+
+    my $CallerID = $Param{CallerID};
+
+    my %FilterRegEx = %{ $ConfigObject->Get('CTI::FilterCallerRegEx') || {} };
+
+    for my $RegExSearch ( sort keys %FilterRegEx ) {
+        my $RegExReplace = $FilterRegEx{$RegExSearch};
+
+        $CallerID =~ s{$RegExSearch}{$RegExReplace}xmsig;
+
+        my %NamedCaptures = %+;
+
+        $CallerID =~ s/\[\*\* \\(\w+) \*\*\]/$NamedCaptures{$1}/xmsg;
+    }
+
+    return $CallerID;
 }
 
 1;

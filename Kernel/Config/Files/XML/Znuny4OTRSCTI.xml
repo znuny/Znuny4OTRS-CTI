@@ -45,4 +45,16 @@
             <Item ValueType="String" ValueRegex="">^.+$</Item>
         </Value>
     </Setting>
+    <Setting Name="CTI::FilterCallerRegEx" Required="0" Valid="0">
+        <Description Translatable="1">This configuration defines a list of replacement regexes which will be used to filter the caller id.</Description>
+        <Navigation>Core::Ticket</Navigation>
+        <Value>
+            <Hash>
+                <Item Key="[\(\)]"></Item>
+                <Item Key="\-"></Item>
+                <Item Key="\s*"></Item>
+                <Item Key="\+">*</Item>
+            </Hash>
+        </Value>
+    </Setting>
 </otrs_config>
