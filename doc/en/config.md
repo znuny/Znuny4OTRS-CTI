@@ -6,7 +6,7 @@ In the following SysConfig it is possible to filter the caller id for the redire
 
 `CTI::FilterCallerRegEx`
 
-## Beispiele
+## Examples
 
 ```
     '(?# regex 1)[\(\)]'                                                     => '',
