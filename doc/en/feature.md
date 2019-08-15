@@ -1,4 +1,4 @@
-# Installation manual for Znuny4OTRS-CTI #
+# Functionality
 
 **Important Notice**
 

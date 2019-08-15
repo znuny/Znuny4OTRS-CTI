@@ -1,4 +1,4 @@
-# Installationsanleitung für Znuny4OTRS-CTI #
+# Funktionalität
 
 **Wichtige Hinweise:**
 

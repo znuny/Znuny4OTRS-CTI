@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<!-- nofilter(TidyAll::Plugin::OTRS::Znuny4OTRS::ACLKeysLevel3Actions) -->
+<!-- nofilter(TidyAll::Plugin::OTRS::Znuny4OTRS::Config::ACLKeysLevel3Actions) -->
 <otrs_config version="1.0" init="Application">
     <ConfigItem Name="Frontend::Module###AgentTicketPhoneCTI" Required="0" Valid="1">
         <Description Translatable="1">Frontend module registration for the agent interface. E. g. 'otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX;MSN=XXX'.</Description>
@@ -37,6 +37,19 @@
         <SubGroup>Core</SubGroup>
         <Setting>
             <String Regex="">^.+$</String>
+        </Setting>
+    </ConfigItem>
+    <ConfigItem Name="CTI::FilterCallerRegEx" Required="0" Valid="1">
+        <Description Translatable="1">This configuration defines a list of replacement regexes which will be used to filter the caller id.</Description>
+        <Group>Znuny4OTRS-CTI</Group>
+        <SubGroup>Core</SubGroup>
+        <Setting>
+            <Hash>
+                <Item Key="[\(\)]"></Item>
+                <Item Key="\-"></Item>
+                <Item Key="\s*"></Item>
+                <Item Key="\+">*</Item>
+            </Hash>
         </Setting>
     </ConfigItem>
 </otrs_config>
