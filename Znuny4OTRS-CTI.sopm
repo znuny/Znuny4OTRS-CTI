@@ -45,21 +45,20 @@
         <p>
         Your Znuny Team!
         <br/>
-        <a href="http://znuny.com/" target="_blank">http://znuny.com</a>
+        <a href="https://www.znuny.com/" target="_blank">https://www.znuny.com</a>
         </p>
         <br/>
         <br/>
     ]]></IntroInstall>
     <IntroInstall Type="post" Title="Post-Install Information" Lang="en"><![CDATA[
         <p>
-        Notice: To configure the Znuny4OTRS CTI go to
+        Notice: To configure the feature add-on navigate in the System Configuration to
             <ol>
-                <li>Admin</li>
-                <li>SysConfig</li>
-                <li>Group "CTI"</li>
-                <li>Subgroup "MSN"</li>
+                <li>Core</li>
+                <li>Znuny4OTRS</li>
+                <li>CTI</li>
             </ol>
-            (<a href="index.pl?Action=AdminSysConfig;Subaction=Edit;SysConfigSubGroup=MSN;SysConfigGroup=Znuny4OTRS-CTI">go here directly</a>) - only needed in expert mode - otherwise just use the URL otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX)</a>
+            (<a href="index.pl?Action=AdminSystemConfigurationGroup;RootNavigation=Core::Znuny4OTRS::CTI">go here directly</a>) - only needed in expert mode - otherwise just use the URL otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX)</a>
         </p>
     ]]></IntroInstall>
     <IntroInstall Type="pre" Title="Pre-Installations-Information" Lang="de"><![CDATA[
@@ -82,21 +81,20 @@
         <p>
         Ihr Znuny Team!
         <br/>
-        <a href="http://znuny.com/" target="_blank">http://znuny.com</a>
+        <a href="https://www.znuny.com/" target="_blank">https://www.znuny.com</a>
         </p>
         <br/>
         <br/>
     ]]></IntroInstall>
     <IntroInstall Type="post" Title="Post-Installations-Information" Lang="de"><![CDATA[
         <p>
-        Anmerkung: Um die Konfigurations-Optionen zu erreichen, gehen Sie zu
+        Anmerkung: Um die Konfigurations-Optionen zu erreichen, gehen Sie in der System-Konfiguration zu
             <ol>
-                <li>Admin</li>
-                <li>SysConfig</li>
-                <li>Gruppe "CTI"</li>
-                <li>Untergruppe "MSN"</li>
+                <li>Core</li>
+                <li>Znuny4OTRS</li>
+                <li>CTI</li>
             </ol>
-            (<a href="index.pl?Action=AdminSysConfig;Subaction=Edit;SysConfigSubGroup=MSN;SysConfigGroup=Znuny4OTRS-CTI">SysConfig Einstellungen für den Experten-Mode</a> - normal reicht die Benutzung über die URL otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX)</a>
+            (<a href="index.pl?Action=AdminSystemConfigurationGroup;RootNavigation=Core::Znuny4OTRS::CTI">SysConfig Einstellungen für den Experten-Mode</a> - normal reicht die Benutzung über die URL otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX)</a>
         </p>
     ]]></IntroInstall>
 </otrs_package>
