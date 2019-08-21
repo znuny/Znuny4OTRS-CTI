@@ -6,8 +6,8 @@ This package is available free of charge!
 
 **Prerequisites**
 
-- The Znuny4OTRS-Repo package needs to be installed. You will find the package here: [http://znuny.com/#!/znuny4otrs](http://znuny.com/#!/znuny4otrs "Znuny4OTRS-Repo Download")
-- OTRS 4 or OTRS 5 needs to be installed
+- The Znuny4OTRS-Repo package needs to be installed. You will find the package here: [https://www.znuny.com/add-ons/znuny4otrs-repository](https://www.znuny.com/add-ons/znuny4otrs-repository)
+- OTRS 6
 - An installed telephone client on your workstation which supports open an URL on incoming calls and optional dial via an URL schemes
 - Configure your local CTI client/agent to open a new browser window (OTRS window) on every incoming phone call. For example: YOUR-OTRS-HOST/otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX
 - We added new parameter screen. If you pass "AgentCustomerInformationCenter" to the screen var, you get linked to the customer information center.
@@ -26,18 +26,12 @@ Admin-->
 Package-Manager
 
 
-Here you can select the repository [-Addons Znuny4OTRS -Public] and install the package.(You might need to update the repository information first) Follow the installation steps and click "next" to finish the installation.
+Here you can select the repository [-Addons Znuny4OTRS -Public] and install the package (You might need to update the repository information first). Follow the installation steps and click "next" to finish the installation.
 
 
-**Notice:** To get to the configuration options go to
+**Notice:** To get to the configuration options in the System Configuration by navigate to
 
-Admin-->
-
-SysConfig-->
-
-Group "CTI"-->
-
-"MSN"
+Core => Znuny4OTRS => CTI
 
 (The use of the URL otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX should be sufficient in most cases)
 
@@ -51,10 +45,10 @@ If you know a client which works just let us know and we'll add him.
 
 ---------------------------
 
-For further questions and commercial support please don't hesitate to contact us via support(at)znuny.com.
+For further questions and commercial support please don't hesitate to contact us via support@znuny.com.
 
 ------------------------
 
-You might find more usefull addons at [http://znuny.com/#!/addons](http://znuny.com/#!/addons "Znuny Addons")
+You might find more usefull addons at [https://www.znuny.com/add-ons/](https://www.znuny.com/add-ons/ "Znuny Addons")
 
 Your Znuny Team
