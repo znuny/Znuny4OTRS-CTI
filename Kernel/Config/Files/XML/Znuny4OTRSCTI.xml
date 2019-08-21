@@ -47,7 +47,7 @@
     </Setting>
     <Setting Name="CTI::FilterCallerRegEx" Required="0" Valid="0">
         <Description Translatable="1">This configuration defines a list of replacement regexes which will be used to filter the caller id.</Description>
-        <Navigation>Core::Ticket</Navigation>
+        <Navigation>Core::Znuny4OTRS::CTI</Navigation>
         <Value>
             <Hash>
                 <Item Key="[\(\)]"></Item>
