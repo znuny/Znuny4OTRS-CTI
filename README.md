@@ -32,6 +32,9 @@ If the caller is stored with his caller-id in the configured customer user datab
 
 Download the [package](https://addons.znuny.com/api/addon_repos/public/1057/latest) and install it via admin interface -> package manager or use [Znuny4OTRS-Repo](https://www.znuny.com/add-ons/znuny4otrs-repository).
 
+**Download**
+
+Download the [latest version](https://addons.znuny.com/api/addon_repos/public/1057/latest).
 
 **Configuration:**
 
