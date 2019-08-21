@@ -6,8 +6,8 @@ Sie können die CTI Integration ohne Lizenzkosten, also kostenfrei, nutzen.
 
 **Voraussetzungen:**
 
- - Das OPM-Paket Znuny4OTRS-Repo muss installiert sein. Sie finden das Paket unter folgendem Link: [http://znuny.com/#!/znuny4otrs](http://znuny.com/#!/znuny4otrs "Znuny4OTRS-Repo Download")
- - OTRS 4 oder OTRS 5
+ - Das OPM-Paket Znuny4OTRS-Repo muss installiert sein. Sie finden das Paket mit einer Beschreibung unter folgendem Link: [https://www.znuny.com/add-ons/znuny4otrs-repository](https://www.znuny.com/add-ons/znuny4otrs-repository)
+ - OTRS 6
  - Installierter Telefonie-Client auf Ihren Arbeitsplatzrechnern, der bei eingehenden Anrufen eine URL aufrufen kann und optional ausgehende Anrufe über URL Schemas unterstützt.
  - Die Telefonnummer muss als suchbares Feld in der Kundensuche konfiguriert sein sein (Überprüfen Sie Kernel/Config.pm -> CustomerUser -> CustomerUserSearchFields)
  - Ihr lokaler Telefonie-Client muss so konfiguriert werden, dass bei einem Anruf ein neues OTRS Browser Fenster geöffnet wird. Z.B.: IHR-OTRS-HOST/otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX
@@ -25,15 +25,10 @@ Paket-Verwaltung und installieren Sie das Paket.
 Da Sie bereits das Znuny4OTRS-Repo Paket installiert haben, müssen Sie in der Paket-Verwaltung nur das Verzeichnis [-Addons-] Znuny4OTRS - Public auswählen und aktualisieren. Danach sehen Sie auf der rechten Seite den Eintrag Znuny4OTRS-CTI im Online-Verzeichnis. Klicken Sie am Ende der Zeile auf "installieren", um das Paket zu installieren.
 
 
-**Anmerkung:** Um die Konfigurationsoptionen zu erreichen, gehen Sie zu
+**Anmerkung:** Um die Konfigurationsoptionen zu erreichen, gehen Sie in der System Konfiguration zu
 
-Admin-->
+Core => Znuny4OTRS => CTI
 
-SysConfig-->
-
-Gruppe "CTI"-->
-
-Untergruppe "MSN"
 
 (Die Benutzung über die URL otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX)
 
@@ -45,9 +40,9 @@ Untergruppe "MSN"
 
 ------------------------
 
-Für Fragen stehen wir Ihnen jederzeit gern unter support(at)znuny.com zur Verfügung.
+Für Fragen stehen wir Ihnen jederzeit gern unter support@znuny.com zur Verfügung.
 
 ------------------------
-Weitere nützliche Addons finden Sie unter [http://znuny.com/#!/addons](http://znuny.com/#!/addons "Znuny Addons")
+Weitere nützliche Addons finden Sie unter [https://www.znuny.com/add-ons/](https://www.znuny.com/add-ons/ "Znuny Addons")
 
 Ihr Znuny Team
