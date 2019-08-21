@@ -1,4 +1,4 @@
-![Znuny logo](http://znuny.com/assets/images/logo_small.png)
+![Znuny logo](https://znuny.com/assets/images/logo_small.png)
 
 # Installation manual for Znuny4OTRS-CTI #
 
@@ -10,99 +10,42 @@ This package is available free of charge!
 
 **Prerequisites**
 
-- The Znuny4OTRS-Repo package needs to be installed. You will find the package here: [http://znuny.com/#!/znuny4otrs](http://znuny.com/#!/znuny4otrs "Znuny4OTRS-Repo Download")
-- OTRS 4 or OTRS 5 needs to be installed
+- [Znuny4OTRS-Repo](https://www.znuny.com/add-ons/znuny4otrs-repository)
+
+- OTRS 6
+
 - An installed telephone client on your workstation which supports open an URL on incoming calls and optional dial via an URL schemes
+
 - Configure your local CTI client/agent to open a new browser window (OTRS window) on every incoming phone call. For example: YOUR-OTRS-HOST/otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX
+
+- Possibility to modify the caller id with regular expressions
+
 - We added new parameter screen. If you pass "AgentCustomerInformationCenter" to the screen var, you get linked to the customer information center.
   YOUR-OTRS-HOST/otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX;Screen=AgentCustomerInformationCenter;
 
 - The telephone number needs to be configured as a searchable field (Check Kernel/Config.pm -> CustomerUser -> CustomerUserSearchFields)
 
-If the caller is stored with his caller-id in the local database, the ticket create screen will be opened and the caller will be pre selected as customer. If you already have your customerdata in OTRS, the phonenumber might be provided with a URL to start external phonecalls.
-
-**Installation:**
-
-Install the package via
-
-Admin-->
-
-Package-Manager
+If the caller is stored with his caller-id in the configured customer user database, the ticket create screen will be opened and the caller will be pre selected as customer. If you already have your customerdata in OTRS, the phonenumber might be provided with a URL to start external phonecalls.
 
 
-Here you can select the repository [-Addons Znuny4OTRS -Public] and install the package.(You might need to update the repository information first) Follow the installation steps and click "next" to finish the installation.
+**Installation**
+
+Download the [package](https://addons.znuny.com/api/addon_repos/public/1057/latest) and install it via admin interface -> package manager or use [Znuny4OTRS-Repo](https://www.znuny.com/add-ons/znuny4otrs-repository).
 
 
-**Notice:** To get to the configuration options go to
+**Configuration:**
 
-Admin-->
-
-SysConfig-->
-
-Group "CTI"-->
-
-"MSN"
+All possible settings can be found in the System Configuration after selectin Znuny4OTRS-CTI in the navigation.
 
 (The use of the URL otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX should be sufficient in most cases)
 
----------------------------
+**Commercial Support**
 
-For further questions and commercial support please don't hesitate to contact us via support(at)znuny.com.
+For this extension and for OTRS in general visit [https://www.znuny.com](https://www.znuny.com). Looking forward to hear from you!
 
-------------------------
+Enjoy!
 
-You might find more usefull addons at [http://znuny.com/#!/addons](http://znuny.com/#!/addons "Znuny Addons")
+Your Znuny Team!
 
-Your Znuny Team
+[https://www.znuny.com/](https://www.znuny.com/)
 
-
-----------------------------
-### Deutsch ###
-
-----------------------------
-
-**Wichtige Hinweise:**
-
-Sie können die CTI Integration ohne Lizenzkosten, also kostenfrei, nutzen.
-
-**Voraussetzungen:**
-
- - Das OPM-Paket Znuny4OTRS-Repo muss installiert sein. Sie finden das Paket unter folgendem Link: [http://znuny.com/#!/znuny4otrs](http://znuny.com/#!/znuny4otrs "Znuny4OTRS-Repo Download")
- - OTRS 4 oder OTRS 5
- - Installierter Telefonie-Client auf Ihren Arbeitsplatzrechnern, der bei eingehenden Anrufen eine URL aufrufen kann und optional ausgehende Anrufe über URL Schemas unterstützt.
- - Die Telefonnummer muss als suchbares Feld in der Kundensuche konfiguriert sein sein (Überprüfen Sie Kernel/Config.pm -> CustomerUser -> CustomerUserSearchFields)
- - Ihr lokaler Telefonie-Client muss so konfiguriert werden, dass bei einem Anruf ein neues OTRS Browser Fenster geöffnet wird. Z.B.: IHR-OTRS-HOST/otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX
-
-Bei einem Anruf ruft der Telefonie Client die entsprechende OTRS-URL mit der Telefonnummer des Anrufers auf und öffnet ein OTRS Telefon-Ticket. Sofern Sie Ihre Kundendaten in OTRS haben, kann eine Telefonnummer mit einer URL versehen werden um externe Anrufe zu starten.
-
-**Installation:**
-
-Laden Sie sich das Paket herunter und klicken Sie auf
-
-Admin-->
-
-Paket-Verwaltung und installieren Sie das Paket.
-
-Da Sie bereits das Znuny4OTRS-Repo Paket installiert haben, müssen Sie in der Paket-Verwaltung nur das Verzeichnis [-Addons-] Znuny4OTRS - Public auswählen und aktualisieren. Danach sehen Sie auf der rechten Seite den Eintrag Znuny4OTRS-CTI im Online-Verzeichnis. Klicken Sie am Ende der Zeile auf "installieren", um das Paket zu installieren.
-
-
-**Anmerkung:** Um die Konfigurationsoptionen zu erreichen, gehen Sie zu
-
-Admin-->
-
-SysConfig-->
-
-Gruppe "CTI"-->
-
-Untergruppe "MSN"
-
-(Die Benutzung über die URL otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX)
-
-------------------------
-
-Für Fragen stehen wir Ihnen jederzeit gern unter support(at)znuny.com zur Verfügung.
-
-------------------------
-Weitere nützliche Addons finden Sie unter [http://znuny.com/#!/addons](http://znuny.com/#!/addons "Znuny Addons")
-
-Ihr Znuny Team
