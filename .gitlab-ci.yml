@@ -16,7 +16,7 @@ mysql:
     - su -c "perl /opt/otrs/bin/otrs.Console.pl Znuny4OTRS::AdvancedPackageManager::InstallSOPM /opt/otrs/Znuny4OTRS-CTI.sopm" -s /bin/bash otrs
     - su -c "perl /opt/otrs/bin/otrs.Console.pl Dev::UnitTest::Run --verbose --test Znuny4OTRSCTI/FilterCallerID" -s /bin/bash otrs
 
-job_deploy_otrs_Znuny4OTRSCTI:
+deploy:
   stage: deploy
   script:
     - sh /sync_repo.sh git@github.com:znuny/Znuny4OTRS-CTI.git
