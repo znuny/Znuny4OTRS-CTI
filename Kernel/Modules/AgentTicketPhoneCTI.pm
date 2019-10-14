@@ -45,8 +45,7 @@ sub Run {
     my $SelectedScreen = $ParamObject->GetParam( Param => 'Screen' ) || '';
 
     # get route for MSN
-    my $Screen         = 'Action=AgentTicketPhone';
-    my $CustomerScreen = 'Action=AgentCustomerInformationCenter';
+    my $Screen = 'Action=AgentTicketPhone';
 
     # redirect to screen if no caller ID or caller ID does not match caller ID regular expression
     my $CallerIDRegEx = $ConfigObject->Get('CTI::CallerIDRegEx');
@@ -105,13 +104,13 @@ sub Run {
         my $UserName   = '';
         my $CustomerID = '';
 
+        # note: used last user
         for my $KeyCustomerUser ( sort keys %CustomerUserList ) {
             $UserID   = $KeyCustomerUser;
             $UserName = $CustomerUserList{$KeyCustomerUser};
         }
 
-        #get customer data for AgentCustomerInformationCenter
-
+        # get customer data for AgentCustomerInformationCenter
         my %CustomerUserData = $CustomerUserObject->CustomerUserDataGet(
             User => $UserID,
         );
@@ -119,8 +118,21 @@ sub Run {
         $UserName   = $LayoutObject->LinkEncode($UserName);
         $CustomerID = $LayoutObject->LinkEncode( $CustomerUserData{UserCustomerID} );
 
-        $Screen = $CustomerScreen;
+        $Screen = 'Action=AgentCustomerInformationCenter';
         $Screen .= ";CustomerID=$CustomerID";
+    }
+    elsif ( $SelectedScreen eq 'AgentCustomerUserInformationCenter' ) {
+        my $CustomerUserID;
+
+        # note: used last user
+        for my $KeyCustomerUser ( sort keys %CustomerUserList ) {
+            $CustomerUserID = $KeyCustomerUser;
+        }
+
+        $CustomerUserID = $LayoutObject->LinkEncode($CustomerUserID);
+
+        $Screen = 'Action=AgentCustomerUserInformationCenter';
+        $Screen .= ";CustomerUserID=$CustomerUserID";
     }
     else {
         # redirect to new screen with selected customer
