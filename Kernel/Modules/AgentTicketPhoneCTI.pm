@@ -164,7 +164,7 @@ sub Run {
             $Screen .= ";CustomerKey_$Counter=$CustomerUserID;CustomerTicketText_$Counter=$UserName";
 
             next CUSTOMER if !$MaxUsers;
-            next CUSTOMER if $Counter lt $MaxUsers;
+            next CUSTOMER if $Counter < $MaxUsers;
             last CUSTOMER;
         }
         $CustomerID = $LayoutObject->LinkEncode($CustomerID);
