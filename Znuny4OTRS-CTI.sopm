@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <otrs_package version="1.0">
     <Name>Znuny4OTRS-CTI</Name>
-    <Version>6.0.6</Version>
+    <Version>6.0.7</Version>
+    <ChangeLog Version="6.0.7" Date="2020-01-24 00:21:45 +0100">Fixed wrong condition.</ChangeLog>
     <ChangeLog Version="6.0.6" Date="2020-01-20 17:11:57 +0100">CTI MaxUsers default limit 10.</ChangeLog>
     <ChangeLog Version="6.0.5" Date="2019-12-16 10:26:49 +0100">Added CustomerUserInformationCenter function.</ChangeLog>
     <ChangeLog Version="6.0.4" Date="2019-08-22 09:13:52 +0200">Added functionality to filter the caller id for the redirect by regex.</ChangeLog>
