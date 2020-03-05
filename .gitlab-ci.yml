@@ -1,22 +1,12 @@
-image: registry.znuny.com/znuny/docker-otrs6ci:latest
+image: registry.znuny.com/znuny/internal/docker-otrs6ci:stable
 
-stages:
-  - test
-  - deploy
+include:
+  - project: 'Znuny/Internal/Znuny'
+    file: '/templates/gitlab/.gitlab-ci-default.yml'
 
-mysql:
-  stage: test
-  services:
-    - name: registry.znuny.com/znuny/docker-mysql-utf8:latest
-      alias: mysql
-  script:
-    - env
-    - pwd
+default:
+  before_script:
     - /run.sh
-    - su -c "perl /opt/otrs/bin/otrs.Console.pl Znuny4OTRS::AdvancedPackageManager::InstallSOPM /opt/otrs/Znuny4OTRS-CTI.sopm" -s /bin/bash otrs
-    - su -c "perl /opt/otrs/bin/otrs.Console.pl Dev::UnitTest::Run --verbose --test Znuny4OTRSCTI/FilterCallerID" -s /bin/bash otrs
-
-deploy:
-  stage: deploy
-  script:
-    - sh /sync_repo.sh git@github.com:znuny/Znuny4OTRS-CTI.git
+    - su -c "perl /opt/otrs/bin/otrs.Console.pl Znuny4OTRS::AdvancedPackageManager::InstallSOPM /opt/otrs/$CI_PROJECT_NAME.sopm" -s /bin/bash otrs
+  after_script:
+    - /unittest.sh

@@ -1,8 +1,10 @@
 ![Znuny logo](https://www.znuny.com/assets/images/logo_small.png)
 
-# Installation manual for Znuny4OTRS-CTI #
 
-### English ###
+![Build status](https://badge.proxy.znuny.com/Znuny4OTRS-CTI/master)
+
+Znuny4OTRS-CTI
+=================
 
 **Important Notice**
 
@@ -10,9 +12,8 @@ This package is available free of charge!
 
 **Prerequisites**
 
-- [Znuny4OTRS-Repo](https://www.znuny.com/add-ons/znuny4otrs-repository)
-
 - OTRS 6
+- [Znuny4OTRS-Repo](https://www.znuny.com/add-ons/znuny4otrs-repository)
 
 - An installed telephone client on your workstation which supports open an URL on incoming calls and optional dial via an URL schemes
 
