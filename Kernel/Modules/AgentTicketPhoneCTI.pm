@@ -17,6 +17,7 @@ our @ObjectDependencies = (
     'Kernel::Config',
     'Kernel::Output::HTML::Layout',
     'Kernel::System::CustomerUser',
+    'Kernel::System::Group',
     'Kernel::System::Log',
     'Kernel::System::Web::Request',
 );
@@ -24,7 +25,6 @@ our @ObjectDependencies = (
 sub new {
     my ( $Type, %Param ) = @_;
 
-    # allocate new hash for object
     my $Self = {%Param};
     bless( $Self, $Type );
 
@@ -38,6 +38,7 @@ sub Run {
     my $ConfigObject       = $Kernel::OM->Get('Kernel::Config');
     my $LayoutObject       = $Kernel::OM->Get('Kernel::Output::HTML::Layout');
     my $ParamObject        = $Kernel::OM->Get('Kernel::System::Web::Request');
+    my $GroupObject        = $Kernel::OM->Get('Kernel::System::Group');
 
     # get call params
     my $CallerID       = $ParamObject->GetParam( Param => 'CallerID' );
@@ -45,7 +46,8 @@ sub Run {
     my $SelectedScreen = $ParamObject->GetParam( Param => 'Screen' ) || '';
 
     # get route for MSN
-    my $Screen = 'Action=AgentTicketPhone';
+    my $Action = 'AgentTicketPhone';
+    my $Screen = "Action=$Action";
 
     # redirect to screen if no caller ID or caller ID does not match caller ID regular expression
     my $CallerIDRegEx = $ConfigObject->Get('CTI::CallerIDRegEx');
@@ -80,7 +82,8 @@ sub Run {
 
             # set new screen
             if ($ScreenMap) {
-                $Screen = "Action=$ScreenMap";
+                $Action = $ScreenMap;
+                $Screen = "Action=$Action";
             }
         }
     }
@@ -99,6 +102,7 @@ sub Run {
     }
 
     if ( $SelectedScreen eq 'AgentCustomerInformationCenter' ) {
+        $Action = $SelectedScreen;
 
         my $UserID     = '';
         my $UserName   = '';
@@ -122,6 +126,8 @@ sub Run {
         $Screen .= ";CustomerID=$CustomerID";
     }
     elsif ( $SelectedScreen eq 'AgentCustomerUserInformationCenter' ) {
+        $Action = $SelectedScreen;
+
         my $CustomerUserID;
 
         # note: used last user
@@ -169,9 +175,46 @@ sub Run {
         }
         $CustomerID = $LayoutObject->LinkEncode($CustomerID);
 
-        $Screen .= ";Subject=;ChallengeToken=$Self->{UserChallengeToken}";
+        $Screen .= ";ChallengeToken=$Self->{UserChallengeToken}";
         $Screen .= ";SelectedCustomerUser=$SelectedCustomerUserID;CustomerID=$CustomerID";
         $Screen .= ";CustomerTicketCounterFromCustomer=$Counter;ExpandCustomerName=3";
+    }
+
+    my $RedirectURLParameters = $ConfigObject->Get('CTI::RedirectURLParameters') // {};
+    if ( IsHashRefWithData( $RedirectURLParameters->{$Action} ) ) {
+        my %UserRoles = $GroupObject->PermissionUserRoleGet(
+            UserID => $Self->{UserID},
+        );
+        %UserRoles = reverse %UserRoles;
+
+        # Use URL parameters of first matching role (alphabetically).
+        my $DefaultRole = '_DEFAULT_';
+
+        my @RedirectURLParameters;
+
+        # If default role is configured, append it to the end so that it will only be used
+        # if a user does not have a matching role.
+        my @ConfiguredRoles = grep { $_ ne $DefaultRole } sort keys %{ $RedirectURLParameters->{$Action} };
+
+        # Add pseudo role which will be used if the user does not have a matching role.
+        my @ConfiguredDefaultRoles = grep { $_ eq $DefaultRole } %{ $RedirectURLParameters->{$Action} };
+        if (@ConfiguredDefaultRoles) {
+            push @ConfiguredRoles, $DefaultRole;
+        }
+
+        CONFIGUREDROLE:
+        for my $ConfiguredRole (@ConfiguredRoles) {
+            next CONFIGUREDROLE if !$UserRoles{$ConfiguredRole} && $ConfiguredRole ne $DefaultRole;
+
+            @RedirectURLParameters = map { $_ . '=' . $RedirectURLParameters->{$Action}->{$ConfiguredRole}->{$_} }
+                keys %{ $RedirectURLParameters->{$Action}->{$ConfiguredRole} };
+
+            last CONFIGUREDROLE;
+        }
+
+        if (@RedirectURLParameters) {
+            $Screen .= ';' . ( join ';', @RedirectURLParameters );
+        }
     }
 
     return $LayoutObject->Redirect( OP => $Screen );
