@@ -20,8 +20,8 @@
     <Vendor>Znuny GmbH</Vendor>
     <URL>http://znuny.com/</URL>
     <License>GNU AFFERO GENERAL PUBLIC LICENSE Version 3, November 2007</License>
-    <Description Lang="en">URL-CTI Support for incoming calls.</Description>
-    <Description Lang="de">URL-CTI Unterstützung für eingehende Anrufe.</Description>
+    <Description Lang="en">URL-CTI support for incoming calls.</Description>
+    <Description Lang="de">URL-CTI-Unterstützung für eingehende Anrufe.</Description>
     <Filelist>
         <File Permission="660" Location="Kernel/Config/Files/XML/Znuny4OTRSCTI.xml"/>
         <File Permission="660" Location="Kernel/Config/Files/Znuny4OTRSCTI.pm"/>
@@ -38,12 +38,12 @@
         <p>
         You are about to install a CTI extention with the following features:
             <ul>
-                <li>Open phone ticket screen with pre select customer based on CallerID in URL (Example: otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX).</li>
+                <li>Opens a phone ticket screen with pre-selected customer based on caller's ID in the URL (example: otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX).</li>
             </ul>
         </p>
         <br/>
         <br/>
-        <p>Notice: For this feature to work your customer phone number needs to be searchable via customer search (Please check out Kernel/Config.pm -> CustomerUser -> CustomerUserSearchFields).</p>
+        <p>Notice: For this feature to work, your customer phone number needs to be searchable via customer search (please check out Kernel/Config.pm -> CustomerUser -> CustomerUserSearchFields).</p>
         <br/>
         <br/>
         <p>
@@ -56,7 +56,7 @@
     ]]></IntroInstall>
     <IntroInstall Type="post" Title="Post-Install Information" Lang="en"><![CDATA[
         <p>
-        Notice: To configure the feature add-on navigate in the System Configuration to
+        Notice: To configure the add-on, navigate in the System Configuration to
             <ol>
                 <li>Core</li>
                 <li>Znuny4OTRS</li>
@@ -72,14 +72,14 @@
         <br/>
         <br/>
         <p>
-        Sie sind gerade dabei, eine Agenten CTI Erweiterung mit folgenden Funktionen zu installieren:
+        Sie sind gerade dabei, eine Agenten-CTI-Erweiterung mit folgenden Funktionen zu installieren:
             <ul>
-                <li>Öffnen der Telefon-Maske bei eingehendem Anruf, Vorauswahl des Kunden über die CalleID in der URL (Beispiel URL: otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX).</li>
+                <li>Öffnen der Telefon-Maske bei eingehendem Anruf, Vorauswahl des Kunden über die Caller-ID im URL (Beispiel-URL: otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX).</li>
             </ul>
         </p>
         <br/>
         <br/>
-        <p>Anmerkung: Stellen Sie sicher, dass auch die Telefonnummer als suchbares Feld in der Kundensuche eingetragen ist (Überprüfen Sie Kernel/Config.pm -> CustomerUser -> CustomerUserSearchFields).</p>
+        <p>Anmerkung: Stellen Sie sicher, dass auch die Telefonnummer als suchbares Feld in der Kundensuche eingetragen ist (überprüfen Sie Kernel/Config.pm -> CustomerUser -> CustomerUserSearchFields).</p>
         <br/>
         <br/>
         <p>
@@ -92,13 +92,13 @@
     ]]></IntroInstall>
     <IntroInstall Type="post" Title="Post-Installations-Information" Lang="de"><![CDATA[
         <p>
-        Anmerkung: Um die Konfigurations-Optionen zu erreichen, gehen Sie in der System-Konfiguration zu
+        Anmerkung: Um die Konfigurationsoptionen zu erreichen, gehen Sie in der System-Konfiguration zu
             <ol>
                 <li>Core</li>
                 <li>Znuny4OTRS</li>
                 <li>CTI</li>
             </ol>
-            (<a href="index.pl?Action=AdminSystemConfigurationGroup;RootNavigation=Core::Znuny4OTRS::CTI">SysConfig Einstellungen für den Experten-Mode</a> - normal reicht die Benutzung über die URL otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX)</a>
+            (<a href="index.pl?Action=AdminSystemConfigurationGroup;RootNavigation=Core::Znuny4OTRS::CTI">SysConfig Einstellungen für den Experten-Mode</a> - normalerweise reicht die Nutzung über den URL otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX)</a>
         </p>
     ]]></IntroInstall>
 </otrs_package>
