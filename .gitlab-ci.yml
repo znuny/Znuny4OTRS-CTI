@@ -2,11 +2,9 @@ image: registry.znuny.com/znuny/internal/docker-otrs6ci:$OTRS_TAG
 
 include:
   - project: 'Znuny/Internal/Znuny'
-    file: '/templates/gitlab/default/.gitlab-ci-default.yml'
+    file: '/templates/gitlab/default/default.yml'
 
 default:
   before_script:
     - /run.sh
     - su -c "perl /opt/otrs/bin/otrs.Console.pl Znuny4OTRS::AdvancedPackageManager::InstallSOPM /opt/otrs/$CI_PROJECT_NAME.sopm" -s /bin/bash otrs
-  after_script:
-    - /unittest.sh
