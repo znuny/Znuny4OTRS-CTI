@@ -1,9 +1,9 @@
-image: registry.znuny.com/znuny/internal/docker-otrs4ci:latest
+image: registry.znuny.com/znuny/internal/docker-otrs4ci:$OTRS_TAG
 
-include:
-  - project: 'Znuny/Internal/Znuny'
-    file: '/templates/gitlab/default/default.yml'
+stages:
+  - deploy
 
-default:
-  before_script:
-    - /run.sh
+deploy:
+  stage: deploy
+  script:
+    - sh /sync_repo.sh git@github.com:znuny/Znuny4OTRS-CTI.git
