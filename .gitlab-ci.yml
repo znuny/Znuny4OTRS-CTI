@@ -1,0 +1,9 @@
+image: registry.znuny.com/znuny/internal/docker-otrs4ci:latest
+
+include:
+  - project: 'Znuny/Internal/Znuny'
+    file: '/templates/gitlab/default/default.yml'
+
+default:
+  before_script:
+    - /run.sh
