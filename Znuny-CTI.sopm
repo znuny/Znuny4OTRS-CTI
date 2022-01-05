@@ -17,7 +17,7 @@
     <ChangeLog Version="1.3.2" Date="2015-12-10 10:29:48 UTC">Added SysConfig to define the max users that should get added to the AgentTicketPhone view.</ChangeLog>
     <ChangeLog Version="1.3.1" Date="2015-11-21 11:47:36 UTC">updated docs</ChangeLog>
     <ChangeLog Version="1.3.0" Date="2015-11-09 17:07:58 UTC">Ported to OTRS 5.</ChangeLog>
-    <Framework>6.1.x</Framework>
+    <Framework>6.2.x</Framework>
     <Vendor>Znuny GmbH</Vendor>
     <URL>http://znuny.com/</URL>
     <License>GNU AFFERO GENERAL PUBLIC LICENSE Version 3, November 2007</License>
