@@ -1,4 +1,4 @@
-image: registry.znuny.com/znuny/internal/docker-otrs6ci:$OTRS_TAG
+image: registry.znuny.com/znuny/internal/docker-znuny-ci:6.1.2
 
 include:
   - project: 'Znuny/Internal/Znuny'
