@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<!-- nofilter(TidyAll::Plugin::OTRS::Znuny4OTRS::Config::ACLKeysLevel3Actions) -->
+<!-- nofilter(TidyAll::Plugin::Znuny::Config::ACLKeysLevel3Actions) -->
 <otrs_config version="2.0" init="Application">
     <Setting Name="Frontend::Module###AgentTicketPhoneCTI" Required="0" Valid="1">
         <Description Translatable="1">Frontend module registration for the agent interface. E.g. 'otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX;MSN=XXX'.</Description>
@@ -24,7 +24,7 @@
     </Setting>
     <Setting Name="CTI::MSN::Action::Map" Required="0" Valid="1">
         <Description Translatable="1">Expert Setting - not needed in standard setup! Defines the action based on MSN, e.g. route incoming calls to different frontend modules (Key=Number,Value=Frontend-Module e.g. Key=1222,Value=AgentTicketPhoneHotline).</Description>
-        <Navigation>Core::Znuny4OTRS::CTI</Navigation>
+        <Navigation>Core::Znuny::CTI</Navigation>
             <Value>
                 <Hash>
                     <Item Key="">AgentTicketPhone</Item>
@@ -33,21 +33,21 @@
     </Setting>
     <Setting Name="CTI::MaxUsers" Required="1" Valid="1">
         <Description Translatable="1">This configuration defines the maximum of customer users that should get added to the the AgentTicketPhone view.</Description>
-        <Navigation>Core::Znuny4OTRS::CTI</Navigation>
+        <Navigation>Core::Znuny::CTI</Navigation>
         <Value>
             <Item ValueType="String" ValueRegex="^\d+$">10</Item>
         </Value>
     </Setting>
     <Setting Name="CTI::CallerIDRegEx" Required="0" Valid="1">
         <Description Translatable="1">Regular expression for the caller ID.</Description>
-        <Navigation>Core::Znuny4OTRS::CTI</Navigation>
+        <Navigation>Core::Znuny::CTI</Navigation>
         <Value>
             <Item ValueType="String" ValueRegex="">^.+$</Item>
         </Value>
     </Setting>
     <Setting Name="CTI::FilterCallerRegEx" Required="0" Valid="0">
         <Description Translatable="1">This configuration defines a list of replacement regexes which will be used to filter the caller ID.</Description>
-        <Navigation>Core::Znuny4OTRS::CTI</Navigation>
+        <Navigation>Core::Znuny::CTI</Navigation>
         <Value>
             <Hash>
                 <Item Key="[\(\)]"></Item>
@@ -59,7 +59,7 @@
     </Setting>
     <Setting Name="CTI::RedirectURLParameters###AgentTicketPhone" Required="0" Valid="1">
         <Description Translatable="1">Parameters that will be added to the AgentTicketPhone redirect URL. Key is the name of the parameter, content its value. Key can also be set to _DEFAULT_. These parameters will then be added if an agent is not assigned to any of the configured roles.</Description>
-        <Navigation>Core::Znuny4OTRS::CTI</Navigation>
+        <Navigation>Core::Znuny::CTI</Navigation>
         <Value>
             <Hash>
                 <DefaultItem>
@@ -72,7 +72,7 @@
     </Setting>
     <Setting Name="CTI::RedirectURLParameters###AgentCustomerInformationCenter" Required="0" Valid="1">
         <Description Translatable="1">Parameters that will be added to the AgentCustomerInformationCenter redirect URL. Key is the name of the parameter, content its value. Key can also be set to _DEFAULT_. These parameters will then be added if an agent is not assigned to any of the configured roles.</Description>
-        <Navigation>Core::Znuny4OTRS::CTI</Navigation>
+        <Navigation>Core::Znuny::CTI</Navigation>
         <Value>
             <Hash>
                 <DefaultItem>
@@ -85,7 +85,7 @@
     </Setting>
     <Setting Name="CTI::RedirectURLParameters###AgentCustomerUserInformationCenter" Required="0" Valid="1">
         <Description Translatable="1">Parameters that will be added to the AgentCustomerUserInformationCenter redirect URL. Key is the name of the parameter, content its value. Key can also be set to _DEFAULT_. These parameters will then be added if an agent is not assigned to any of the configured roles.</Description>
-        <Navigation>Core::Znuny4OTRS::CTI</Navigation>
+        <Navigation>Core::Znuny::CTI</Navigation>
         <Value>
             <Hash>
                 <DefaultItem>
