@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <otrs_package version="1.0">
-    <Name>Znuny4OTRS-CTI</Name>
+    <Name>Znuny-CTI</Name>
     <Version>6.0.9</Version>
     <ChangeLog Version="6.0.9" Date="2021-02-12 17:37:02 +0100">Happy new year. Tidied code.</ChangeLog>
     <ChangeLog Version="6.0.8" Date="2020-04-06 14:11:10 +0200">Added support for configurable redirect URL parameters.</ChangeLog>
@@ -17,24 +17,23 @@
     <ChangeLog Version="1.3.2" Date="2015-12-10 10:29:48 UTC">Added SysConfig to define the max users that should get added to the AgentTicketPhone view.</ChangeLog>
     <ChangeLog Version="1.3.1" Date="2015-11-21 11:47:36 UTC">updated docs</ChangeLog>
     <ChangeLog Version="1.3.0" Date="2015-11-09 17:07:58 UTC">Ported to OTRS 5.</ChangeLog>
-    <Framework>6.0.x</Framework>
-    <PackageRequired Version="6.0.71">Znuny4OTRS-Repo</PackageRequired>
+    <Framework>6.1.x</Framework>
     <Vendor>Znuny GmbH</Vendor>
     <URL>http://znuny.com/</URL>
     <License>GNU AFFERO GENERAL PUBLIC LICENSE Version 3, November 2007</License>
     <Description Lang="en">URL-CTI support for incoming calls.</Description>
     <Description Lang="de">URL-CTI-Unterstützung für eingehende Anrufe.</Description>
     <Filelist>
-        <File Permission="660" Location="Kernel/Config/Files/XML/Znuny4OTRSCTI.xml"/>
-        <File Permission="660" Location="Kernel/Config/Files/Znuny4OTRSCTI.pm"/>
-        <File Permission="660" Location="Kernel/Language/de_Znuny4OTRSCTI.pm"/>
+        <File Permission="660" Location="Kernel/Config/Files/XML/ZnunyCTI.xml"/>
+        <File Permission="660" Location="Kernel/Config/Files/ZnunyCTI.pm"/>
+        <File Permission="660" Location="Kernel/Language/de_ZnunyCTI.pm"/>
         <File Permission="660" Location="Kernel/Modules/AgentTicketPhoneCTI.pm"/>
-        <File Permission="660" Location="scripts/test/Znuny4OTRSCTI/FilterCallerID.t"/>
+        <File Permission="660" Location="scripts/test/ZnunyCTI/FilterCallerID.t"/>
     </Filelist>
     <IntroInstall Type="pre" Title="Pre-Install Information" Lang="en"><![CDATA[
         <br/>
         <br/>
-        Welcome to <u>Znuny4OTRS CTI</u>!
+        Welcome to <u>Znuny CTI</u>!
         <br/>
         <br/>
         <p>
@@ -61,16 +60,16 @@
         Notice: To configure the add-on, navigate in the System Configuration to
             <ol>
                 <li>Core</li>
-                <li>Znuny4OTRS</li>
+                <li>Znuny</li>
                 <li>CTI</li>
             </ol>
-            (<a href="index.pl?Action=AdminSystemConfigurationGroup;RootNavigation=Core::Znuny4OTRS::CTI">go here directly</a>) - only needed in expert mode - otherwise just use the URL otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX)</a>
+            (<a href="index.pl?Action=AdminSystemConfigurationGroup;RootNavigation=Core::Znuny::CTI">go here directly</a>) - only needed in expert mode - otherwise just use the URL otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX)</a>
         </p>
     ]]></IntroInstall>
     <IntroInstall Type="pre" Title="Pre-Installations-Information" Lang="de"><![CDATA[
         <br/>
         <br/>
-        Herzlich Willkommen zu <u>Znuny4OTRS CTI</u>!
+        Herzlich Willkommen zu <u>Znuny CTI</u>!
         <br/>
         <br/>
         <p>
@@ -97,10 +96,11 @@
         Anmerkung: Um die Konfigurationsoptionen zu erreichen, gehen Sie in der System-Konfiguration zu
             <ol>
                 <li>Core</li>
-                <li>Znuny4OTRS</li>
+                <li>Znuny</li>
                 <li>CTI</li>
             </ol>
-            (<a href="index.pl?Action=AdminSystemConfigurationGroup;RootNavigation=Core::Znuny4OTRS::CTI">SysConfig Einstellungen für den Experten-Mode</a> - normalerweise reicht die Nutzung über den URL otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX)</a>
+            (<a href="index.pl?Action=AdminSystemConfigurationGroup;RootNavigation=Core::Znuny::CTI">SysConfig Einstellungen für den Experten-Mode</a> - normalerweise reicht die Nutzung über den URL otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX)</a>
         </p>
     ]]></IntroInstall>
+    <PackageMerge Name="Znuny4OTRS-CTI" TargetVersion="6.0.9"></PackageMerge>
 </otrs_package>
