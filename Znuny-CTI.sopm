@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <otrs_package version="1.0">
     <Name>Znuny-CTI</Name>
-    <Version>6.2.1</Version>
+    <Version>6.3.1</Version>
+    <ChangeLog Version="6.3.1" Date="2022-04-01 09:16:09 +0200">Package ported to Znuny 6.3.</ChangeLog>
     <ChangeLog Version="6.2.1" Date="2022-01-05 09:36:01 +0100">Ported to 6.2.</ChangeLog>
     <ChangeLog Version="6.1.1" Date="2022-01-05 09:35:29 +0100">Initial release for Znuny 6.1.</ChangeLog>
     <ChangeLog Version="6.0.9" Date="2021-02-12 17:37:02 +0100">Happy new year. Tidied code.</ChangeLog>
