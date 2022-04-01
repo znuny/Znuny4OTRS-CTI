@@ -242,7 +242,6 @@ sub FilterCallerID {
     my $ConfigObject = $Kernel::OM->Get('Kernel::Config');
     my $LogObject    = $Kernel::OM->Get('Kernel::System::Log');
 
-    # check needed stuff
     NEEDED:
     for my $Needed (qw(CallerID)) {
         next NEEDED if defined $Param{$Needed};
