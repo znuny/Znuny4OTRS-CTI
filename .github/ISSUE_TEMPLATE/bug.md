@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Create a report to help us improve.
+about: Create a report that helps us improve Znuny
 title: 'Bug - [short text describing the problem]'
 labels: 'Bug, Clarification'
 assignees: ''
@@ -14,9 +14,8 @@ assignees: ''
 
 ### Environment
 
-- OS:           <!-- [e.g. Windows, MacOS, Linux] -->
 - Browser:      <!-- [e. g. Chrome, Firefox, Safari] -->
-- OTRS version: <!-- [e. g. 6.0.15] -->
+- Framework version: <!-- [e. g. 6.0.15] -->
 
 ### Expected behavior
 
@@ -41,4 +40,4 @@ Steps to reproduce the behavior:
 
 ### Screenshots
 
-<!-- If applicable, add screenshots to help explain your problem. -->
+<!-- If necessary, include screenshots to explain your problem. -->
