@@ -11,7 +11,7 @@ This package is available free of charge!
 
 **Prerequisites**
 
-- Znuny 6.2
+- Znuny 6.3
 - An installed phone client on your workstation which supports opening a URL on incoming calls and optional dialing via URL scheme
 
 **Notes**
@@ -26,7 +26,7 @@ If the caller is stored with his caller ID in the configured customer user datab
 
 **Installation**
 
-Download the [package](https://addons.znuny.com/api/addon_repos/public/2117/latest) and install it via admin interface -> package manager.
+Download the [package](https://addons.znuny.com/api/addon_repos/public/2244/latest) and install it via admin interface -> package manager.
 
 **Configuration:**
 
@@ -36,7 +36,7 @@ To get to the configuration options in the System Configuration, navigate to Cor
 
 **Download**
 
-Download the [latest version](https://addons.znuny.com/api/addon_repos/public/2117/latest).
+Download the [latest version](https://addons.znuny.com/api/addon_repos/public/2244/latest).
 
 **Professional Support**
 
