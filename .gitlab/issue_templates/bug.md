@@ -1,43 +1,47 @@
 ### Informationen
 
-<!-- falls vorhanden -->
-*  Kunde          ???
+<!-- if exists -->
+<!--
+*  Customer       ???
 *  Ticket#        ???
-*  Projekt#       ???
-*  ProjektBaller# ???
-
-### Beschreibung des erwarteten Verhaltens
-(Was soll eigentlich passieren?)
-
-<!-- ![erwartete](erwartete.png) -->
-
-### Beschreibung des aktuellen Verhaltens
-(Zusammenfassung des Problems/Fehlers)
-
-<!-- ![aktuell](aktuell.png) -->
-
-### Schritte zur Reproduktion des Problems
-(Wie kann man das Problem reproduzieren? Das ist sehr wichtig!)
-
-1. ...
-2. ...
-
-### Screenshots
-Füge ggf. Screenshots hinzu, um das Problem zu erklären.
-
-<!-- ![weitere Screenshots](Screenshots.png) -->
+*  Project#       ???
+*  ProjectBaller# ???
+-->
 
 ### Environment
- - OS: [e.g. Windows, MacOS, Linux]
  - Browser: [e. g. Chrome, Firefox, Safari]
- - OTRS version [e. g. 6.0.15]
+ - Framework version [e. g. 6.0.15]
 
-### Weitere Informationen
-Füge hier weitere Informationen zum Problem hinzu.
+### Expected behavior
+
+<!-- A clear and concise description of what you expected to happen. -->
+
+### Actual behavior
+
+<!-- A clear and concise description of what happened (the issue/bug/problem). -->
+
+### How to reproduce
+<!-- (How to reproduce the problem? This is very important!) -->
+
+Steps to reproduce the behavior:
+
+1. Go to '...'
+2. Click on '...'
+3. Scroll down to '...'
+4. See error
+
+### Additional information
+
+<!-- Add any other information about the problem here. -->
+
+### Screenshots
+
+<!-- If necessary, include screenshots to explain your problem. -->
 
 ### VZ
-(Wenn möglich, erstelle hier eine __[VZ](https://znuny.zammad.com/#vz_systems)__, die das problematische Verhalten aufweist bzw. zeigt und verknüpfe die VZ hier im Issue.)
+<!-- If possible, create a __[VZ](https://znuny.zammad.com/#vz_systems)__ here that exhibits or displays the problematic behavior and link the VZ here in the Issue. -->
 
-[vz???](http://vz???.test.znuny.com/otrs/index.pl)
+<!--
+[vz???](http://vz???.test.znuny.com/otrs/index.pl) -->
 
 /label ~Bug

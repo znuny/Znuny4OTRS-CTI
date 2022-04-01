@@ -1,23 +1,24 @@
 ### Informationen
 
-<!-- falls vorhanden -->
-*  Kunde          ???
+<!-- if exists -->
+<!--
+*  Customer       ???
 *  Ticket#        ???
-*  Projekt#       ???
-*  ProjektBaller# ???
-
-### Beschreibung der neuen Funktion
-
-(Was soll umgesetzt werden?)
-
-<!-- ![Funktion](Funktion.png) -->
+*  Project#       ???
+*  ProjectBaller# ???
+-->
 
 ### Environment
- - OS: [e.g. Windows, MacOS, Linux]
  - Browser: [e. g. Chrome, Firefox, Safari]
- - OTRS version [e. g. 6.0.15]
+ - Framework version [e. g. 6.0.15]
 
-### Weitere Informationen
+### Description of the new function
 
-Füge hier weitere Informationen hinzu.
+(What should be implemented?)
+
+<!-- ![function](function.png) -->
+
+### Additional information
+
+<!-- Add any other information about the problem here. -->
 

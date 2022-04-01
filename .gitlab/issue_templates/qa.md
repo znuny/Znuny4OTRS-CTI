@@ -1,8 +1,8 @@
-* [ ]  technische QA
+* [ ]  development QA
   * [ ] :bug:  Code
-* [ ]  fachliche QA
+* [ ]  consulting QA
   * [ ] :memo:  Dokumentation
   * [ ] :computer:   Funktion
 
-/label ~"QA Consulting"
-/label ~"QA Development"
+/label ~"3 - QA consulting"
+/label ~"3 - QA development"
