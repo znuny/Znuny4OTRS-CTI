@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <otrs_package version="1.0">
     <Name>Znuny-CTI</Name>
-    <Version>6.0.9</Version>
+    <Version>6.1.1</Version>
+    <ChangeLog Version="6.1.1" Date="2022-01-05 09:35:29 +0100">Initial release for Znuny 6.1.</ChangeLog>
     <ChangeLog Version="6.0.9" Date="2021-02-12 17:37:02 +0100">Happy new year. Tidied code.</ChangeLog>
     <ChangeLog Version="6.0.8" Date="2020-04-06 14:11:10 +0200">Added support for configurable redirect URL parameters.</ChangeLog>
     <ChangeLog Version="6.0.7" Date="2020-01-24 00:21:45 +0100">Fixed wrong condition.</ChangeLog>
@@ -102,5 +103,5 @@
             (<a href="index.pl?Action=AdminSystemConfigurationGroup;RootNavigation=Core::Znuny::CTI">SysConfig Einstellungen für den Experten-Mode</a> - normalerweise reicht die Nutzung über den URL otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX)</a>
         </p>
     ]]></IntroInstall>
-    <PackageMerge Name="Znuny4OTRS-CTI" TargetVersion="6.0.9"></PackageMerge>
+    <PackageMerge Name="Znuny4OTRS-CTI" TargetVersion="6.0.9"/>
 </otrs_package>
