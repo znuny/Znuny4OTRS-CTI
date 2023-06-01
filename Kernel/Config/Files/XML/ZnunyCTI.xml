@@ -2,7 +2,7 @@
 <!-- nofilter(TidyAll::Plugin::Znuny::Config::ACLKeysLevel3Actions) -->
 <otrs_config version="2.0" init="Application">
     <Setting Name="Frontend::Module###AgentTicketPhoneCTI" Required="0" Valid="1">
-        <Description Translatable="1">Frontend module registration for the agent interface. E.g. 'otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX;MSN=XXX'.</Description>
+        <Description Translatable="1">Frontend module registration for the agent interface. E.g. 'znuny/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX;MSN=XXX'.</Description>
         <Navigation>Frontend::Agent::ModuleRegistration</Navigation>
         <Value>
             <Item ValueType="FrontendRegistration">

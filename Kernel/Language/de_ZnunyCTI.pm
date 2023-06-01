@@ -17,7 +17,7 @@ sub Data {
     my $Self = shift;
 
 
-    $Self->{Translation}->{"Frontend module registration for the agent interface. E.g. 'otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX;MSN=XXX'."} = "Frontend-Modul-Registrierung für das Agent-Interface, z. B. 'otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX;MSN=XXX'.";
+    $Self->{Translation}->{"Frontend module registration for the agent interface. E.g. 'znuny/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX;MSN=XXX'."} = "Frontend-Modul-Registrierung für das Agent-Interface, z. B. 'znuny/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX;MSN=XXX'.";
     $Self->{Translation}->{"Expert Setting - not needed in standard setup! Defines the action based on MSN, e.g. route incoming calls to different frontend modules (Key=Number,Value=Frontend-Module e.g. Key=1222,Value=AgentTicketPhoneHotline)."} = "Experteneinstellung - wird bei der Standardinstallation nicht benötigt! Definiert die Aktion basierend auf MSN, routet z. B. eingehende Anrufe an verschiedene Frontend-Module (Key = Number, Value = Frontend-Modul, Z. B. Key = 1222, Value = AgentTicketPhoneHotline).";
     $Self->{Translation}->{"This configuration defines the maximum of customer users that should get added to the the AgentTicketPhone view."} = "Diese Konfiguration definiert das Maximum der Kundenbenutzer, die in der AgentTicketPhone-Ansicht hinzugefügt werden sollen.";
     $Self->{Translation}->{"Regular expression for the caller ID."} = "Regulärer Ausdruck für die Caller-ID.";

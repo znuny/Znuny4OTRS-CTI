@@ -2,9 +2,9 @@
 <otrs_package version="1.0">
     <Name>Znuny-CTI</Name>
     <Version>6.5.1</Version>
-    <Framework>6.5.x</Framework>
+    <Framework>7.0.x</Framework>
     <Vendor>Znuny GmbH</Vendor>
-    <URL>http://znuny.com/</URL>
+    <URL>https://znuny.com/</URL>
     <License>GNU AFFERO GENERAL PUBLIC LICENSE Version 3, November 2007</License>
     <Description Lang="en">URL-CTI support for incoming calls.</Description>
     <Description Lang="de">URL-CTI-Unterstützung für eingehende Anrufe.</Description>
@@ -44,7 +44,7 @@
         <p>
         You are about to install a CTI extention with the following features:
             <ul>
-                <li>Opens a phone ticket screen with pre-selected customer based on caller's ID in the URL (example: otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX).</li>
+                <li>Opens a phone ticket screen with pre-selected customer based on caller's ID in the URL (example: znuny/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX).</li>
             </ul>
         </p>
         <br/>
@@ -68,7 +68,7 @@
                 <li>Znuny</li>
                 <li>CTI</li>
             </ol>
-            (<a href="index.pl?Action=AdminSystemConfigurationGroup;RootNavigation=Core::Znuny::CTI">go here directly</a>) - only needed in expert mode - otherwise just use the URL otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX)</a>
+            (<a href="index.pl?Action=AdminSystemConfigurationGroup;RootNavigation=Core::Znuny::CTI">go here directly</a>) - only needed in expert mode - otherwise just use the URL znuny/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX)</a>
         </p>
     ]]></IntroInstall>
     <IntroInstall Type="pre" Title="Pre-Installations-Information" Lang="de"><![CDATA[
@@ -80,7 +80,7 @@
         <p>
         Sie sind gerade dabei, eine Agenten-CTI-Erweiterung mit folgenden Funktionen zu installieren:
             <ul>
-                <li>Öffnen der Telefon-Maske bei eingehendem Anruf, Vorauswahl des Kunden über die Caller-ID im URL (Beispiel-URL: otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX).</li>
+                <li>Öffnen der Telefon-Maske bei eingehendem Anruf, Vorauswahl des Kunden über die Caller-ID im URL (Beispiel-URL: znuny/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX).</li>
             </ul>
         </p>
         <br/>
@@ -104,7 +104,7 @@
                 <li>Znuny</li>
                 <li>CTI</li>
             </ol>
-            (<a href="index.pl?Action=AdminSystemConfigurationGroup;RootNavigation=Core::Znuny::CTI">SysConfig Einstellungen für den Experten-Mode</a> - normalerweise reicht die Nutzung über den URL otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX)</a>
+            (<a href="index.pl?Action=AdminSystemConfigurationGroup;RootNavigation=Core::Znuny::CTI">SysConfig Einstellungen für den Experten-Mode</a> - normalerweise reicht die Nutzung über den URL znuny/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX)</a>
         </p>
     ]]></IntroInstall>
     <PackageMerge Name="Znuny4OTRS-CTI" TargetVersion="6.0.9"/>
