@@ -10,10 +10,10 @@ This package is available free of charge!
 
 **Notes**
 
-- Configure your local CTI client/agent to open a new browser window (Znuny window) on every incoming phone call. For example: YOUR-Znuny-HOST/otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX
+- Configure your local CTI client/agent to open a new browser window (Znuny window) on every incoming phone call. For example: YOUR-ZNUN>-HOST/znuny/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX
 - Possibility to modify the caller ID with regular expressions
 - We added the URL parameter "Screen". If you pass "Screen=AgentCustomerInformationCenter", you get linked to the customer information center.
-  YOUR-ZNUNY-HOST/otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX;Screen=AgentCustomerInformationCenter;
+  YOUR-ZNUNY-HOST/znuny/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX;Screen=AgentCustomerInformationCenter;
 - The phone number needs to be configured as a searchable field (check Kernel/Config.pm -> CustomerUser -> CustomerUserSearchFields)
 
 If the caller is stored with his caller ID in the configured customer user database, the ticket creation screen will be opened and the caller will be pre-selected as customer. If you already have your customer data in ZNUNY, the phone number might be provided with a URL to start external phone calls.
@@ -27,7 +27,7 @@ Here you can select the repository [-Addons Znuny -Public] and install the packa
 
 **Notice:** To get to the configuration options in the System Configuration, navigate to __Core => Znuny => CTI__.
 
-(The use of the URL otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX should be sufficient in most cases)
+(The use of the URL znuny/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX should be sufficient in most cases)
 
 **Tested VoIP-clients**
 - Cisco Agent Desktop

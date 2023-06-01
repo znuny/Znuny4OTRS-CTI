@@ -11,10 +11,9 @@ package Kernel::Config::Files::ZnunyCTI;
 
 use strict;
 use warnings;
+use utf8;
 
 use Kernel::System::VariableCheck qw(:all);
-
-use utf8;
 
 sub Load {
     my ( $File, $Self ) = @_;
