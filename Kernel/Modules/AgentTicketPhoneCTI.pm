@@ -10,6 +10,8 @@ package Kernel::Modules::AgentTicketPhoneCTI;
 
 use strict;
 use warnings;
+use utf8;
+
 use Kernel::System::VariableCheck qw(:all);
 use Kernel::System::CustomerUser;
 
