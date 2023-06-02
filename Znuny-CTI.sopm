@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <otrs_package version="1.0">
     <Name>Znuny-CTI</Name>
-    <Version>6.5.1</Version>
+    <Version>7.0.1</Version>
     <Framework>7.0.x</Framework>
     <Vendor>Znuny GmbH</Vendor>
     <URL>https://znuny.com/</URL>
     <License>GNU AFFERO GENERAL PUBLIC LICENSE Version 3, November 2007</License>
     <Description Lang="en">URL-CTI support for incoming calls.</Description>
     <Description Lang="de">URL-CTI-Unterstützung für eingehende Anrufe.</Description>
+    <ChangeLog Version="7.0.1" Date="2023-06-02 17:27:52 +0200">Initial release for Znuny 7.0</ChangeLog>
     <ChangeLog Version="6.5.1" Date="2023-02-20 14:12:08 +0100">Initial release for Znuny 6.5.</ChangeLog>
     <ChangeLog Version="6.4.1" Date="2022-07-27 22:17:25 +0200">initial release for Znuny 6.4</ChangeLog>
     <ChangeLog Version="6.3.1" Date="2022-04-01 09:16:09 +0200">Package ported to Znuny 6.3.</ChangeLog>
