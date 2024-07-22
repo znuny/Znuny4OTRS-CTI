@@ -2,7 +2,7 @@
 <otrs_package version="1.0">
     <Name>Znuny-CTI</Name>
     <Version>7.0.1</Version>
-    <Framework>7.0.x</Framework>
+    <Framework>7.1.x</Framework>
     <Vendor>Znuny GmbH</Vendor>
     <URL>https://znuny.com/</URL>
     <License>GNU AFFERO GENERAL PUBLIC LICENSE Version 3, November 2007</License>

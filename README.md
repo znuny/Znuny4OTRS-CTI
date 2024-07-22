@@ -11,7 +11,7 @@ This package is available free of charge!
 
 **Prerequisites**
 
-- Znuny 7.0
+- Znuny 7.1
 - An installed phone client on your workstation which supports opening a URL on incoming calls and optional dialing via URL scheme
 
 **Notes**
