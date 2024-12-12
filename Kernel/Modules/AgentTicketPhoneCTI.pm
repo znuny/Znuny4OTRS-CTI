@@ -217,6 +217,19 @@ sub Run {
         }
     }
 
+    # Get additional parameters. These are forwarded to $Action.
+    my $AdditionalRedirectURLParameters = $ConfigObject->Get('CTI::AdditionalRedirectURLParameters') // [];
+
+    ADDITIONALPARAMETER:
+    for my $AdditionalParameter (@$AdditionalRedirectURLParameters) {
+        my $ParameterValue = $ParamObject->GetParam( Param => $AdditionalParameter );
+        next ADDITIONALPARAMETER if !IsStringWithData($ParameterValue);
+
+        my $ParameterValueEncoded = $LayoutObject->LinkEncode($ParameterValue);
+
+        $Screen .= ";$AdditionalParameter=$ParameterValueEncoded";
+    }
+
     return $LayoutObject->Redirect( OP => $Screen );
 }
 

@@ -28,6 +28,8 @@ sub Data {
         = 'Parameter, die beim Redirect an den AgentCustomerInformationCenter-URL angehängt werden. Schlüssel ist der Name des Parameters, Inhalt dessen Wert. Als Schlüssel kann auch `_DEFAULT_` angegeben werden. Dann werden diese Parameter angehängt, sofern der Agent keiner passenden Rolle zugeordnet ist.';
     $Self->{Translation}->{'Parameters that will be added to the AgentCustomerUserInformationCenter redirect URL. Key is the name of the parameter, content its value. Key can also be set to _DEFAULT_. These parameters will then be added if an agent is not assigned to any of the configured roles.'}
         = 'Parameter, die beim Redirect an den AgentCustomerUserInformationCenter-URL angehängt werden. Schlüssel ist der Name des Parameters, Inhalt dessen Wert. Als Schlüssel kann auch `_DEFAULT_` angegeben werden. Dann werden diese Parameter angehängt, sofern der Agent keiner passenden Rolle zugeordnet ist.';
+    $Self->{Translation}->{'Parameters that will be passed to the redirect action.'}
+        = 'Parameter, die an die Redirect-Aktion übergeben werden.';
 
     return 1;
 }
