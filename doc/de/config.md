@@ -24,3 +24,7 @@ Für verschiedene Frontendmodule können statische Parameter konfiguriert werden
 - CTI::RedirectURLParameters###AgentCustomerUserInformationCenter
 
 Es können beliebige weitere Frontendmodule konfiguriert werden. Diese müssen dann allerdings in Kernel/Config.pm o. ä. hinterlegt werden.
+
+## CTI::AdditionalRedirectURLParameters
+
+Parameter, die an den Redirect-URL des CTI-Plugins angehängt werden sollen. Es werden Standard-Ticketfelder unterstützt. Dynamische Felder müssen mit dem Präfix "DynamicField_" angegeben werden.

@@ -96,4 +96,14 @@
             </Hash>
         </Value>
     </Setting>
+    <Setting Name="CTI::AdditionalRedirectURLParameters" Required="0" Valid="0">
+        <Description Translatable="1">Parameters that will be passed to the redirect action.</Description>
+        <Navigation>Core::Znuny::CTI</Navigation>
+        <Value>
+            <Array>
+                <Item>DynamicField_NAME</Item>
+                <Item>Queue</Item>
+            </Array>
+        </Value>
+    </Setting>
 </otrs_config>

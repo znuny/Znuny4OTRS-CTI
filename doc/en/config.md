@@ -24,3 +24,7 @@ Static parameters can be configured for various front-end modules, which are app
 - CTI::RedirectURLParameters####AgentCustomerUserInformationCenter
 
 Any other front-end modules can be configured. However, these must then be stored in Kernel/Config.pm or similar.
+
+## CTI::AdditionalRedirectURLParameters
+
+Parameters that should be appended to the redirect URL of the CTI plugin. Standard ticket fields are supported. Dynamic fields must be entered with the prefix "DynamicField_".
