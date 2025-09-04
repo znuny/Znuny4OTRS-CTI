@@ -2,7 +2,7 @@
 <otrs_package version="1.0">
     <Name>Znuny-CTI</Name>
     <Version>7.1.2</Version>
-    <Framework>7.1.x</Framework>
+    <Framework>7.2.x</Framework>
     <Vendor>Znuny GmbH</Vendor>
     <URL>https://znuny.com/</URL>
     <License>GNU AFFERO GENERAL PUBLIC LICENSE Version 3, November 2007</License>
@@ -65,13 +65,12 @@
     ]]></IntroInstall>
     <IntroInstall Type="post" Title="Post-Install Information" Lang="en"><![CDATA[
         <p>
-        Notice: To configure the add-on, navigate in the System Configuration to
-            <ol>
-                <li>Core</li>
-                <li>Znuny</li>
-                <li>CTI</li>
-            </ol>
-            (<a href="index.pl?Action=AdminSystemConfigurationGroup;RootNavigation=Core::Znuny::CTI">go here directly</a>) - only needed in expert mode - otherwise just use the URL znuny/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX)</a>
+        <strong>Notice:</strong> To configure the add-on, navigate in the System Configuration to
+        <em>Core → Znuny → CTI</em> or <a href="index.pl?Action=AdminSystemConfigurationGroup;RootNavigation=Core::Znuny::CTI">
+            jump to the configuration directly
+        </a> (only needed in some setups).<br/><br/>
+        Otherwise, just use the following URL for your softphones configuration:  <br/><br/>
+        <code>znuny/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX</code>
         </p>
     ]]></IntroInstall>
     <IntroInstall Type="pre" Title="Pre-Installations-Information" Lang="de"><![CDATA[

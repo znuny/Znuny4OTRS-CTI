@@ -1,6 +1,6 @@
 ![Znuny logo](https://www.znuny.com/assets/images/logo_small.png)
 
-![Build status](https://badge.proxy.znuny.com/Znuny4OTRS-CTI/rel-7_0)
+![Build status](https://badge.proxy.znuny.com/Znuny4OTRS-CTI/rel-7_2)
 
 Znuny-CTI
 ==============
@@ -11,7 +11,7 @@ This package is available free of charge!
 
 **Prerequisites**
 
-- Znuny 7.1
+- Znuny 7.2
 - An installed phone client on your workstation which supports opening a URL on incoming calls and optional dialing via URL scheme
 
 **Notes**
