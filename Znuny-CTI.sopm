@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <otrs_package version="1.0">
     <Name>Znuny-CTI</Name>
-    <Version>7.1.2</Version>
+    <Version>7.2.1</Version>
     <Framework>7.2.x</Framework>
     <Vendor>Znuny GmbH</Vendor>
     <URL>https://znuny.com/</URL>
     <License>GNU AFFERO GENERAL PUBLIC LICENSE Version 3, November 2007</License>
     <Description Lang="en">URL-CTI support for incoming calls.</Description>
     <Description Lang="de">URL-CTI-Unterstützung für eingehende Anrufe.</Description>
+    <ChangeLog Version="7.2.1" Date="2026-01-28 13:10:47 +0100">Initial release for Znuny 7.2.</ChangeLog>
     <ChangeLog Version="7.1.2" Date="2024-12-12 10:12:01 +0100">Added support for additional redirect URL parameters to AgentTicketPhoneCTI.</ChangeLog>
     <ChangeLog Version="7.1.1" Date="2024-08-26 08:50:24 +0200">Initial release for Znuny 7.1.</ChangeLog>
     <ChangeLog Version="7.0.1" Date="2023-06-02 17:27:52 +0200">Initial release for Znuny 7.0</ChangeLog>
