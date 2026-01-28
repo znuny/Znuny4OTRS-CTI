@@ -22,6 +22,7 @@ our @ObjectDependencies = (
     'Kernel::System::Group',
     'Kernel::System::Log',
     'Kernel::System::Web::Request',
+    'Kernel::System::Queue',
 );
 
 sub new {
@@ -225,15 +226,31 @@ sub Run {
     ADDITIONALPARAMETER:
     for my $AdditionalParameter (@$AdditionalRedirectURLParameters) {
         my $ParameterValue = $ParamObject->GetParam( Param => $AdditionalParameter );
-        next ADDITIONALPARAMETER if !IsStringWithData($ParameterValue);
 
         my $ParameterValueEncoded = $LayoutObject->LinkEncode($ParameterValue);
 
+        # If the additional parameter is Queue, we need to lookup the queue ID and add it to the destination parameter.
+        # Also change the additional parameter to Dest.
+        # This is necessary because the parameter for Queue is Dest in AgentTicketPhone.
+        if ( $AdditionalParameter eq 'Queue' ) {
+
+            my $QueueObject = $Kernel::OM->Get('Kernel::System::Queue');
+            my $QueueID     = $QueueObject->QueueLookup(
+                Queue => $ParameterValue,
+            );
+
+            $AdditionalParameter   = 'Dest';
+            $ParameterValueEncoded = $QueueID . '||' . $ParameterValue;
+        }
+
+        next ADDITIONALPARAMETER if !IsStringWithData($ParameterValue);
         $Screen .= ";$AdditionalParameter=$ParameterValueEncoded";
     }
 
     return $LayoutObject->Redirect( OP => $Screen );
 }
+
+=head1 PUBLIC INTERFACE
 
 =head2 FilterCallerID()
 

@@ -1,4 +1,4 @@
-image: registry.znuny.com/znuny/internal/docker-znuny-ci:7.2
+image: registry.znuny.com/znuny/internal/docker-znuny-ci:7.3
 
 include:
   - project: $INCLUDE_PROJECT
