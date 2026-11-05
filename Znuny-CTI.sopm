@@ -8,6 +8,7 @@
     <License>GNU AFFERO GENERAL PUBLIC LICENSE Version 3, November 2007</License>
     <Description Lang="en">URL-CTI support for incoming calls.</Description>
     <Description Lang="de">URL-CTI-Unterstützung für eingehende Anrufe.</Description>
+    <Description Lang="hu">URL-CTI támogatás a bejövő hívásokhoz.</Description>
     <ChangeLog Version="6.5.2" Date="2024-12-12 10:40:45 +0100">Added support for additional redirect URL parameters to AgentTicketPhoneCTI.</ChangeLog>
     <ChangeLog Version="6.5.1" Date="2023-02-20 14:12:08 +0100">Initial release for Znuny 6.5.</ChangeLog>
     <ChangeLog Version="6.4.1" Date="2022-07-27 22:17:25 +0200">initial release for Znuny 6.4</ChangeLog>
@@ -106,6 +107,42 @@
                 <li>CTI</li>
             </ol>
             (<a href="index.pl?Action=AdminSystemConfigurationGroup;RootNavigation=Core::Znuny::CTI">SysConfig Einstellungen für den Experten-Mode</a> - normalerweise reicht die Nutzung über den URL otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX)</a>
+        </p>
+    ]]></IntroInstall>
+    <IntroInstall Type="pre" Title="Telepítés előtti információk" Lang="hu"><![CDATA[
+        <br/>
+        <br/>
+        Üdvözli a <u>Znuny CTI</u>!
+        <br/>
+        <br/>
+        <p>
+        Ön egy CTI-kiterjesztés telepítésére készül, amely a következő funkciókkal rendelkezik:
+            <ul>
+                <li>Megnyitja egy telefonos jegy képernyőjét az URL-ben lévő hívó azonosítója alapján előre kiválasztott ügyféllel (példa: otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX).</li>
+            </ul>
+        </p>
+        <br/>
+        <br/>
+        <p>Figyelem: ahhoz, hogy ez a funkció működjön, az ügyfél telefonszámának kereshetőnek kell lennie az ügyfélkeresőn keresztül (nézze meg a Kernel/Config.pm -> CustomerUser -> CustomerUserSearchFields szakaszt).</p>
+        <br/>
+        <br/>
+        <p>
+        Az Ön Znuny csapata!
+        <br/>
+        <a href="https://www.znuny.com/" target="_blank">https://www.znuny.com</a>
+        </p>
+        <br/>
+        <br/>
+    ]]></IntroInstall>
+    <IntroInstall Type="post" Title="Telepítés utáni információk" Lang="hu"><![CDATA[
+        <p>
+        Figyelem: a kiegészítő beállításához látogasson el a rendszerbeállításokban a következő beállításokhoz:
+            <ol>
+                <li>Core</li>
+                <li>Znuny</li>
+                <li>CTI</li>
+            </ol>
+            (<a href="index.pl?Action=AdminSystemConfigurationGroup;RootNavigation=Core::Znuny::CTI">ugrás közvetlenül ide</a> – csak szakértői módban szükséges – egyébként használja csak ezt az URL-t: otrs/index.pl?Action=AgentTicketPhoneCTI;CallerID=XXX)</a>
         </p>
     ]]></IntroInstall>
     <PackageMerge Name="Znuny4OTRS-CTI" TargetVersion="6.0.9"/>
